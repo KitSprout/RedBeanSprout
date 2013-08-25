@@ -24,7 +24,7 @@ PC13, PC14, PC15 接上 LED
 3. 方便開發 ... 可以直接插在麵包板上做開發  
 4. 讓初學者可以自己DIY的開發板
 
-*** Program
+*** Program  
 ．LAB_RainbowNR_ADC ... ADC轉換 ... 尚未測試  
 ．LAB_RainbowNR_EXTI ... 外部中斷  
 ．LAB_RainbowNR_LED ... LED & KEY  
