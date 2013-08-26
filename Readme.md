@@ -30,6 +30,7 @@ PC13, PC14, PC15 接上 LED
 ．LAB_RainbowNR_LED ... LED & KEY  
 ．LAB_RainbowNR_PWM ... PWM輸出  
 ．LAB_RainbowNR_USART ... UART傳輸  
+．LAB_RainbowNR_Systick ... Systick計時  
 ．TEST_RainbowNR_TestBoard ... 板子測試  
 
 <br>  
