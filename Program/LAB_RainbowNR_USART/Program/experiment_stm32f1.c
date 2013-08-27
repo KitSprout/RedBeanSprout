@@ -25,8 +25,6 @@ int main( void )
 	GPIO_Config();
 	RS232_Config();
 
-	RS232_Print(USART1, (u8*)" ");
-
   while(1) {
     LED_G = ~LED_G;
 

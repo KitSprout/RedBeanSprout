@@ -21,26 +21,41 @@ u16 ADC_AveTr[ADC_Channel] = {0};
 /*=====================================================================================================*/
 int main( void )
 {
-  u8 TrData[8] = {0};
+  u8 TrData[4][16] = {0};
 
-	SystemInit();
-	GPIO_Config();
-	ADC_Config();
-	RS232_Config();
+  SystemInit();
+  GPIO_Config();
+  RS232_Config();
+  ADC_Config();
 
   while(1) {
     LED_G = ~LED_G;
     ADC_Average(ADC_AveTr);
 
-    TrData[0] = (u8)(ADC_AveTr[0]);
-    TrData[1] = (u8)(ADC_AveTr[0]>>8);
-    TrData[2] = (u8)(ADC_AveTr[1]);
-    TrData[3] = (u8)(ADC_AveTr[1]>>8);
-    TrData[4] = (u8)(ADC_AveTr[2]);
-    TrData[5] = (u8)(ADC_AveTr[2]>>8);
-    TrData[6] = (u8)(ADC_AveTr[3]);
-    TrData[7] = (u8)(ADC_AveTr[3]>>8);
-    RS232_VisualScope(USART3, TrData, 8);
+    if(KEY_WU == 1 && KEY_BO == 1) {
+      NumToChar(Type_D, 4, TrData[3], ADC_AveTr[3]);
+      RS232_Print(USART1, (u8*)"ADC_IN_4 = ");
+      RS232_Print(USART1, TrData[3]);
+      RS232_Print(USART1, (u8*)"\r\n");
+    }
+    else if(KEY_WU == 1) {
+      NumToChar(Type_D, 4, TrData[1], ADC_AveTr[1]);
+      RS232_Print(USART1, (u8*)"ADC_IN_2 = ");
+      RS232_Print(USART1, TrData[1]);
+      RS232_Print(USART1, (u8*)"\r\n");
+    }
+    else if(KEY_BO == 1) {
+      NumToChar(Type_D, 4, TrData[2], ADC_AveTr[2]);
+      RS232_Print(USART1, (u8*)"ADC_IN_3 = ");
+      RS232_Print(USART1, TrData[2]);
+      RS232_Print(USART1, (u8*)"\r\n");
+    }
+    else {
+      NumToChar(Type_D, 4, TrData[0], ADC_AveTr[0]);
+      RS232_Print(USART1, (u8*)"ADC_IN_1 = ");
+      RS232_Print(USART1, TrData[0]);
+      RS232_Print(USART1, (u8*)"\r\n");
+    }
 	}
 }
 /*=====================================================================================================*/

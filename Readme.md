@@ -3,7 +3,7 @@
 * File Name   : Readme.md
 * Author      : Hom19910422
 * Version     : v1.0
-* Update      : 2013/08/26
+* Update      : 2013/08/27
 * Description : Rainbow NenoRed Information
 * Wiki        : https://github.com/Hom19910422/RainbowNanoRed/wiki
 
@@ -11,7 +11,7 @@ MCU : STM32F103C
 
 *** Layout  
 採用STM32F103C  
-3V3電源輸入 (( 沒有加穩壓  
+3V3電源輸入 (( 沒有加穩壓LDO  
 
 將 PA0, PB2 接上 KEY  
 PC13, PC14, PC15 接上 LED  
@@ -25,11 +25,12 @@ PC13, PC14, PC15 接上 LED
 4. 讓初學者可以自己DIY的開發板
 
 *** Program  
-．LAB_RainbowNR_ADC ... ADC轉換 ... 尚未測試  
+．LAB_RainbowNR_ADC ... ADC轉換, 並傳資料至PC  
+．LAB_RainbowNR_ADCtoPWM ... ADC讀取, 並輸出至PWM  
 ．LAB_RainbowNR_EXTI ... 外部中斷  
 ．LAB_RainbowNR_LED ... LED & KEY  
 ．LAB_RainbowNR_PWM ... PWM輸出  
-．LAB_RainbowNR_USART ... UART傳輸  
+．LAB_RainbowNR_USART ... UART發送資料至PC  
 ．LAB_RainbowNR_Systick ... Systick計時  
 ．TEST_RainbowNR_TestBoard ... 板子測試  
 
