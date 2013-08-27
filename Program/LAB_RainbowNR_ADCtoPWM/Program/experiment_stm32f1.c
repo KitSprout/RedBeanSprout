@@ -28,8 +28,10 @@ u16 ADC_AveTr[ADC_Channel] = {0};
 /*=====================================================================================================*/
 int main( void )
 {
-  u8 i = 0;
-  u8 ReadData = 0;
+  s16 ReadData = 0;
+  u16 Vref_Max = 0;
+  u16 Vref_Min = 0;
+  u16 delta_Vref = Vref_Max - Vref_Min;
 
 	SystemInit();
 	GPIO_Config();
@@ -37,22 +39,33 @@ int main( void )
 	ADC_Config();
   PWM_Config();
 
+  while(KEY_WU != 1) {
+    LED_R = 0;
+    ADC_Average(ADC_AveTr);
+    Vref_Max = ADC_AveTr[0];
+  }
+  LED_R = 1;
+  while(KEY_BO != 1) {
+    LED_B = 0;
+    ADC_Average(ADC_AveTr);
+    Vref_Min = ADC_AveTr[0];
+  }
+  LED_B = 1;
+
+  delta_Vref = Vref_Max - Vref_Min;
+
   while(1) {
     LED_G = ~LED_G;
 
-		while(KEY_WU == 1) {
-			PWM2 = i;
-			PWM3 = i;
-			i++;
-			if(i>=PWM_MOTOR_MAX) {
-				i = PWM_MOTOR_MIN;
-				LED_R = ~LED_R;
-			}
-			Delay_1us(500);
-		}
     ADC_Average(ADC_AveTr);
-    ReadData = (u8)(ADC_AveTr[0]*0.029296875f);   // 0~120
-    PWM1 = ReadData;
+
+    ReadData = ADC_AveTr[0];
+    if(ReadData>Vref_Max)
+      ReadData = Vref_Max;
+    else if(ReadData<Vref_Min)
+      ReadData = Vref_Min;
+ 
+    PWM1 = (u16)(120.0f*(1.0f-(float)(ReadData-Vref_Min)/delta_Vref));
     Delay_10ms(10);
 	}
 }
@@ -107,8 +120,8 @@ void PWM_Config( void )
 
 /************************** PWM Output **************************************/
 	/* 設定 TIM2 TIM3 TIM4 Time Base */
-	TIM_TimeBaseStruct.TIM_Period = (u16)(120-1);               // 週期 = 2.5ms, 400Hz
-	TIM_TimeBaseStruct.TIM_Prescaler = (u16)(1-1);              // 除頻36 = 1M ( 1us )
+	TIM_TimeBaseStruct.TIM_Period = (u16)(120-1);               // 週期 = 1.67us, 600kHz
+	TIM_TimeBaseStruct.TIM_Prescaler = (u16)(1-1);              // 除頻1 = 72M ( 1us )
 	TIM_TimeBaseStruct.TIM_ClockDivision = TIM_CKD_DIV1;
 	TIM_TimeBaseStruct.TIM_CounterMode = TIM_CounterMode_Up;    // 上數
 	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStruct);
