@@ -3,7 +3,7 @@
 * File Name   : Readme.md
 * Author      : Hom19910422
 * Version     : v1.0
-* Update      : 2013/08/28
+* Update      : 2013/08/29
 * Description : Rainbow NenoRed Information
 * Wiki        : https://github.com/Hom19910422/RainbowNanoRed/wiki
 
@@ -33,6 +33,8 @@ Program
 * LAB_RNR_ADCtoPWM ... ADC 讀取, 並輸出至 PWM
 * LAB_RNR_EXTI ... 外部中斷
 * LAB_RNR_FLASH ... 內部 FLASH 讀寫
+* LAB_RNR_IAP_LED ... IAP LED 程式
+* LAB_RNR_IAP_TestBoard ... IAP TestBoard 程式
 * LAB_RNR_LED ... LED & KEY
 * LAB_RNR_PWM ... PWM 輸出
 * LAB_RNR_PWR ... 進入StandbyMode, 並用 KEY_WU 鍵喚醒
