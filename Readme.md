@@ -33,6 +33,7 @@ Program
 * LAB_RNR_ADCtoPWM ... ADC 讀取, 並輸出至 PWM
 * LAB_RNR_EXTI ... 外部中斷
 * LAB_RNR_FLASH ... 內部 FLASH 讀寫
+* LAB_RNR_IAP ... IAP 程式, 使用 RS232_SendBinFile 將 xxx.bin 檔更新至 MCU
 * LAB_RNR_IAP_LED ... IAP LED 程式
 * LAB_RNR_IAP_TestBoard ... IAP TestBoard 程式
 * LAB_RNR_LED ... LED & KEY
