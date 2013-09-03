@@ -19,7 +19,6 @@ void GPIO_Config( void );
 int main( void )
 {
   u8 i = 0;
-  u8 TrData[8] = {0};
 
 	SystemInit();
 	GPIO_Config();
@@ -31,10 +30,9 @@ int main( void )
     i++;
     if(i==255)  i = 0;
 
-    NumToChar(Type_D, 3, TrData, i);
-    RS232_Print(USART1, (u8*)"i = ");
-    RS232_Print(USART1, TrData);
-    RS232_Print(USART1, (u8*)"\r\n");
+    RS232_SendStr(USART1, (u8*)"i = ");
+    RS232_SendNum(USART1, Type_D, 3, i);
+    RS232_SendStr(USART1, (u8*)"\r\n");
 
     Delay_10ms(10);
 	}
