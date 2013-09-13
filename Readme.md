@@ -1,4 +1,4 @@
-﻿Rainbow NenoRed
+﻿Rainbow NanoRed
 ========
 * File Name   : Readme.md
 * Author      : Hom19910422
