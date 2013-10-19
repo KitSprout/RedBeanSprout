@@ -20,14 +20,22 @@ int main( void )
   GPIO_Config();
 
   while(1) {
-    LED_R = ~LED_R;
+    LED_R = !LED_R;
+    LED_G = !LED_G;
+    LED_B = !LED_B;
     Delay_10ms(10);
-    if(KEY_BO == 1) {
-      LED_G = ~LED_G;
-      Delay_10ms(10);
+    while(KEY_BO == 1) {
+      LED_R = !LED_R;
+      LED_G = !LED_G;
+      LED_B = !LED_B;
+      Delay_10ms(20);
     }
-    if(KEY_WU == 1) {
-      LED_B = ~LED_B;
+    while(KEY_WU == 1) {
+      LED_R = !LED_R;
+      Delay_10ms(10);
+      LED_G = !LED_G;
+      Delay_10ms(10);
+      LED_B = !LED_B;
       Delay_10ms(10);
     }
   }
@@ -54,9 +62,9 @@ void GPIO_Config( void )
   GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  LED_R = 0;
-  LED_G = 0;
-  LED_B = 0;
+  LED_R = 1;
+  LED_G = 1;
+  LED_B = 1;
 }
 /*=====================================================================================================*/
 /*=====================================================================================================*/

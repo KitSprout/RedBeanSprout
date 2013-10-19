@@ -3,7 +3,7 @@
 * File Name   : Readme.md
 * Author      : Hom19910422
 * Version     : v1.0
-* Update      : 2013/10/03
+* Update      : 2013/10/19
 * Description : Rainbow NenoRed Information
 * Wiki        : https://github.com/Hom19910422/RainbowNanoRed/wiki
 
