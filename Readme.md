@@ -41,6 +41,7 @@ Program
 * LAB_RNR_PWM ... PWM 輸出
 * LAB_RNR_PWR ... 進入StandbyMode, 並用 KEY_WU 鍵喚醒
 * LAB_RNR_Systick ... Systick 計時
+* LAB_RNR_TFT2.2 ... SPI 2.2' TFT 240*320 ( ili9341 )
 * LAB_RNR_USART ... UART 發送資料至PC
 * LAB_RNR_USART_IntRecv ... UART 中斷接收, 並發送接收到的資料至 PC ( PC 端使用 Python )
 * LAB_RNR_WDG ... WWDG & IWDG
