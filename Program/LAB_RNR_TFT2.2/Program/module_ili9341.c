@@ -7,10 +7,10 @@
 #include "algorithm_string.h"
 /*=====================================================================================================*/
 /*=====================================================================================================*/
-#define LCD_LIG PBO(9)
-#define LCD_DC  PBO(10)
-#define LCD_RST PBO(11)
-#define LCD_CS  PBO(12)
+#define LCD_LIG   TIM3->CCR1
+#define LCD_DC    PBO(10)
+#define LCD_RST   PBO(11)
+#define LCD_CST   PBO(12)
 /*=====================================================================================================*/
 /*=====================================================================================================*
 **函數 : ILI9341_Config
@@ -25,12 +25,14 @@ void ILI9341_Config( void )
   GPIO_InitTypeDef GPIO_InitStruct;
   SPI_InitTypeDef SPI_InitStruct;
 
-  /* SPI Clk Init *************************************************************/
+  /* Clk Init *************************************************************/
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO, ENABLE);
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO, ENABLE);
 
-  /* LIG PB9  */	/* DC PB10  */	/* RST PB11 */	/* CS PB12  */
-  GPIO_InitStruct.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12;
+  ILI9341_LigConfig();
+
+  /* DC PB10  */	/* RST PB11 */	/* CST PB12  */
+  GPIO_InitStruct.GPIO_Pin = GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12;
   GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
   GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -41,17 +43,67 @@ void ILI9341_Config( void )
   GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_PP;
   GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  SPI_InitStruct.SPI_Direction = SPI_Direction_2Lines_FullDuplex;             // 兩線式，全雙工
-  SPI_InitStruct.SPI_Mode = SPI_Mode_Master;                                  // 主模式
-  SPI_InitStruct.SPI_DataSize = SPI_DataSize_8b;                              // 資料大小 8 Bit
-  SPI_InitStruct.SPI_CPOL = SPI_CPOL_High;                                    // Polarity Hight
-  SPI_InitStruct.SPI_CPHA = SPI_CPHA_2Edge;                                   // 第 2 個邊沿有效，上升沿為采樣
-  SPI_InitStruct.SPI_NSS = SPI_NSS_Soft;                                      // NSS 信號由軟體產生
-  SPI_InitStruct.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_2;             // 2 分頻，48MHz
-  SPI_InitStruct.SPI_FirstBit = SPI_FirstBit_MSB;                             // 先傳 MSB
+  LCD_CST = 1;
+
+  SPI_InitStruct.SPI_Direction = SPI_Direction_2Lines_FullDuplex; // 兩線式，全雙工
+  SPI_InitStruct.SPI_Mode = SPI_Mode_Master;                      // 主模式
+  SPI_InitStruct.SPI_DataSize = SPI_DataSize_8b;                  // 資料大小 8 Bit
+  SPI_InitStruct.SPI_CPOL = SPI_CPOL_High;                        // Polarity Hight
+  SPI_InitStruct.SPI_CPHA = SPI_CPHA_2Edge;                       // 第 2 個邊沿有效，上升沿為采樣
+  SPI_InitStruct.SPI_NSS = SPI_NSS_Soft;                          // NSS 信號由軟體產生
+  SPI_InitStruct.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_2; // 2 分頻，48MHz
+  SPI_InitStruct.SPI_FirstBit = SPI_FirstBit_MSB;                 // 先傳 MSB
   SPI_InitStruct.SPI_CRCPolynomial = 7;
   SPI_Init(SPI2, &SPI_InitStruct);
   SPI_Cmd(SPI2, ENABLE);
+}
+/*=====================================================================================================*/
+/*=====================================================================================================*
+**函數 : ILI9341_LigConfig
+**功能 : 配置調光 IO
+**輸入 : None
+**輸出 : None
+**使用 : ILI9341_LigConfig();
+**=====================================================================================================*/
+/*=====================================================================================================*/
+void ILI9341_LigConfig( void )
+{
+  GPIO_InitTypeDef GPIO_InitStruct;
+  TIM_TimeBaseInitTypeDef TIM_TimeBaseStruct;
+  TIM_OCInitTypeDef TIM_OCInitStruct;
+
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO, ENABLE);
+
+  /* LIG PA6  */
+  GPIO_InitStruct.GPIO_Pin = GPIO_Pin_6;
+  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_PP;
+  GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  TIM_DeInit(TIM3);
+
+  /************************** PWM Output **************************************/
+  /* 設定 TIM3 Time Base */
+  TIM_TimeBaseStruct.TIM_Period = (u16)(256-1);               // 週期 = 2.5ms, 400Hz
+  TIM_TimeBaseStruct.TIM_Prescaler = (u16)(0);                // 除頻72 = 1M ( 1us )
+  TIM_TimeBaseStruct.TIM_ClockDivision = TIM_CKD_DIV1;
+  TIM_TimeBaseStruct.TIM_CounterMode = TIM_CounterMode_Up;    // 上數
+  TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStruct);
+
+  /* 設定 TIM3 OC */
+  TIM_OCInitStruct.TIM_OCMode = TIM_OCMode_PWM1;              // 配置為 PWM1 模式
+  TIM_OCInitStruct.TIM_OutputState = TIM_OutputState_Enable;  // 致能 OC
+  TIM_OCInitStruct.TIM_Pulse = 0;                             // 設置跳變值
+  TIM_OCInitStruct.TIM_OCPolarity = TIM_OCPolarity_High;      // 當計數值小於 PWM_MOTOR_MIN 時為高電平
+  TIM_OC1Init(TIM3, &TIM_OCInitStruct);                       // 初始化 TIM3 OC1
+  TIM_OC1PreloadConfig(TIM3, TIM_OCPreload_Enable);           // 致能 TIM3 OC1 預裝載
+
+  /* 啟動 */
+  TIM_ARRPreloadConfig(TIM3, ENABLE);                         // 致能 TIM3 重載寄存器ARR
+  TIM_Cmd(TIM3, ENABLE);                                      // 致能 TIM3
+
+  LCD_LIG = 0;
 }
 /*=====================================================================================================*/
 /*=====================================================================================================*
@@ -59,13 +111,15 @@ void ILI9341_Config( void )
 **功能 : Write Command or Address
 **輸入 : WriteCmd
 **輸出 : None
-**使用 : 
+**使用 : LCD_WriteCmd(0xCB);
 **=====================================================================================================*/
 /*=====================================================================================================*/
 static void LCD_WriteCmd( u8 WriteCmd )
 {
+  LCD_CST = 0;
   LCD_DC = 0;
   SPI_RW(SPI2, WriteCmd);
+  LCD_CST = 1;
 }
 /*=====================================================================================================*/
 /*=====================================================================================================*
@@ -73,13 +127,15 @@ static void LCD_WriteCmd( u8 WriteCmd )
 **功能 : Write Data
 **輸入 : WriteData
 **輸出 : None
-**使用 : 
+**使用 : LCD_WriteData(Byte8H(Color));
 **=====================================================================================================*/
 /*=====================================================================================================*/
 static void LCD_WriteData( u16 WriteData )
 {
+  LCD_CST = 0;
   LCD_DC = 1;
   SPI_RW(SPI2, WriteData);
+  LCD_CST = 1;
 }
 /*=====================================================================================================*/
 /*=====================================================================================================*
@@ -87,13 +143,16 @@ static void LCD_WriteData( u16 WriteData )
 **功能 : Write Color
 **輸入 : Color
 **輸出 : None
-**使用 : 
+**使用 : LCD_WriteColor(BLACK);
 **=====================================================================================================*/
 /*=====================================================================================================*/
 static void LCD_WriteColor( u16 Color )
 {
-  LCD_WriteData(Byte8H(Color));
-	LCD_WriteData(Byte8L(Color));
+  LCD_CST = 0;
+  LCD_DC = 1;
+  SPI_RW(SPI2, Byte8H(Color));
+  SPI_RW(SPI2, Byte8L(Color));
+  LCD_CST = 1;
 }
 /*=====================================================================================================*/
 /*=====================================================================================================*
@@ -221,6 +280,8 @@ void ILI9341_Init( void )
   LCD_WriteCmd(0x2C);
 
   LCD_Clear(BLACK);
+
+  LCD_SetBackLight(BLIGHT_DEFAULT);
 }
 /*=====================================================================================================*/
 /*=====================================================================================================*
@@ -236,8 +297,6 @@ void LCD_Clear( u16 Color )
   u32 Point = LCD_W*LCD_H;
 
   LCD_SetWindow(0, 0, LCD_W-1, LCD_H-1);
-
-  LCD_DC = 1;
 
 	while(Point--)
 		LCD_WriteColor(Color);
@@ -293,8 +352,17 @@ void LCD_SetWindow( u16 StartX, u16 StartY, u16 EndX, u16 EndY )
 **使用 : LCD_SetBackLight(128);
 **=====================================================================================================*/
 /*=====================================================================================================*/
-void LCD_SetBackLight( u8 BackLight )
+void LCD_SetBackLight( u16 BackLight )
 {
+	if(BackLight == 0) {
+    LCD_LIG = 0;
+	}
+	else if (BackLight >= BLIGHT_MAX) {
+    LCD_LIG = BLIGHT_MAX;
+	}
+  else {
+    LCD_LIG = BackLight;
+  }
 }
 /*=====================================================================================================*/
 /*=====================================================================================================*
@@ -651,28 +719,26 @@ void LCD_PutNum( u16 CoordiX, u16 CoordiY, u8 Type, u8 Length, u32 NumData, u16 
 /*=====================================================================================================*/
 void LCD_TestColoBar( void )
 {
-  u16 drawColor[12] = {
+  u32 i = 0, j = 0;
+  u16 drawColor[9] = {
     RED,
     GREEN,
     BLUE,
     MAGENTA,
-    GRED,
-    GBLUE,
-    BLUE2,
     CYAN,
     BLACK,
-    GREY,
+    GRAY,
     WHITE,
     YELLOW
   };
 
-  u32 i = LCD_W*LCD_H;
-
 	LCD_SetWindow(0, 0, LCD_W-1, LCD_H-1);
-  LCD_DC = 1;
 
-  while(i--)
-    LCD_WriteColor(drawColor[(i*12)/(LCD_H*LCD_W)]);
+  for(i=0; i<9; i++) {
+    j = (i!=8)? 35*LCD_W : (LCD_H-35*8)*LCD_W;
+    while(j--)
+      LCD_WriteColor(drawColor[i]);
+  }
 }
 /*=====================================================================================================*/
 /*=====================================================================================================*/

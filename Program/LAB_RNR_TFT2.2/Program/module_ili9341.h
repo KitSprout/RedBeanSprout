@@ -14,6 +14,11 @@
   #define LCD_H 320 
 #endif
 
+#define BLIGHT_MAX      255
+#define BLIGHT_MIN      0
+#define BLIGHT_DEFAULT  200
+#define BLIGHT_STEP     5
+
 /* LCD Size&Type */
 #define ASCII1206		((u8)0x00)
 #define ASCII1608		((u8)0x04)
@@ -32,23 +37,20 @@
 #define GREEN       ((u16)0x07E0) /* 綠色 */
 #define BLUE        ((u16)0x001F) /* 藍色 */
 #define MAGENTA     ((u16)0xF81F) /* 紅紫色，洋紅色 */
-#define GRED        ((u16)0xFFE0)
-#define GBLUE       ((u16)0x07FF) 
-#define BLUE2       ((u16)0x051F)	/* 淺藍色 */
 #define CYAN        ((u16)0x7FFF)	/* 藍綠色，青色 */
 #define BLACK       ((u16)0x0000) /* 黑色 */
-#define GREY        ((u16)0xF7DE) /* 灰色 */
+#define GRAY        ((u16)0x8410) /* 灰色 */
 #define WHITE       ((u16)0xFFFF) /* 白色 */
-#define YELLOW      ((u16)0xFFF0) /* 黃色 */  // 0xFFE0
-#define COLOR_MASK  ((u16)0x9999) /* 用於文字背景透明 */
+#define YELLOW      ((u16)0xFFE0) /* 黃色 */
 /*=====================================================================================================*/
 /*=====================================================================================================*/
 void ILI9341_Config( void );
+void ILI9341_LigConfig( void );
 void ILI9341_Init( void );
 void LCD_Clear( u16 Color );
 void LCD_SetCursor( u16 CoordiX, u16 CoordiY );
 void LCD_SetWindow( u16 StartX, u16 StartY, u16 EndX, u16 EndY );
-void LCD_SetBackLight( u8 BackLight );
+void LCD_SetBackLight( u16 BackLight );
 void LCD_DrawPixel( u16 CoordiX, u16 CoordiY, u16 Color );
 void LCD_DrawLine( u16 StartX, u16 StartY, u16 EndX, u16 EndY, u32 Color );
 void LCD_DrawLineX( u16 CoordiX, u16 CoordiY, u16 Length, u16 Color );

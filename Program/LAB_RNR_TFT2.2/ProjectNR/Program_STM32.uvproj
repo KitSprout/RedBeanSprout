@@ -424,6 +424,11 @@
               <FilePath>..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</FilePath>
             </File>
             <File>
+              <FileName>stm32f10x_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32f10x_spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c</FilePath>
@@ -900,6 +905,11 @@
               <FilePath>..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</FilePath>
             </File>
             <File>
+              <FileName>stm32f10x_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32f10x_spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c</FilePath>
@@ -1374,6 +1384,11 @@
               <FileName>stm32f10x_gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_spi.c</FileName>
