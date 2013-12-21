@@ -25,9 +25,9 @@ int main( void )
   LED_R = 0;
 
   LCD_TestColoBar();
-  LCD_PutStr(10, 10, (u8*)"TFT TEST ... ", ASCII1608, WHITE, BLACK);
 
   while(1) {
+    LED_G = ~LED_G;
     LED_B = ~LED_B;
     Delay_1ms(200);
   }
