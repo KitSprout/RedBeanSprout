@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom19910422)
 * Version : v1.0
-* Update  : 2013/12/22
+* Update  : 2014/01/09
 
 Description
 ========
@@ -14,7 +14,7 @@ Hardware
 * 控制器　 : [STM32F103C](http://www.st.com/web/catalog/mmc/FM141/SC1169/SS1031/LN1565/PF189782) 48Pin 72MHz
 * 其他外接 : 2 個按鍵 ( PA0, PB2 )、3 個 LED ( PC13, PC14, PC15 )、 1 個 UART ( PA9, PA10 )
 * PCB 尺寸 : 49.53 * 21.59mm
-* 設計軟體 [Altium Designer 13](http://www.altium.com/en/products/altium-designer) ( [PcbLib](https://github.com/CYACAcademic/AltiumDesigner_PcbLibrary) use AD PcbLib v0.? )
+* 設計軟體 [Altium Designer 13](http://www.altium.com/en/products/altium-designer) ( PcbLib use AD [PcbLib v?](https://github.com/OpenPCB/AltiumDesigner_PcbLibrary) )
 
 Program
 ========
@@ -29,7 +29,7 @@ Program
 * LAB_RNR_PWM ... PWM 輸出
 * LAB_RNR_PWR ... 進入StandbyMode, 並用 KEY_WU 鍵喚醒
 * LAB_RNR_Systick ... Systick 計時
-* LAB_RNR_TFT2.2 ... SPI 2.2" 240*320 TFT LCD ( use [TFT_2.2-inch](https://github.com/Hom19910422/TFT_2.2-inch) )
+* LAB_RNR_TFT2.2 ... SPI 2.2" 240*320 TFT LCD ( use [TFT_2.2-inch](https://github.com/OpenPCB/TFT_2.2-inch) )
 * LAB_RNR_USART ... UART 發送資料至PC
 * LAB_RNR_USART_IntRecv ... UART 中斷接收, 並發送接收到的資料至 PC ( PC 端使用 Python )
 * LAB_RNR_WDG ... WWDG & IWDG
