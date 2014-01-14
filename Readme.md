@@ -1,20 +1,19 @@
 ﻿[Rainbow NanoRed](https://github.com/Hom19910422/RainbowNanoRed)
 ========
 * Author  : [Hom](https://github.com/Hom19910422)
-* Version : v1.0
-* Update  : 2014/01/09
+* Version : v1.2
+* Update  : 2014/01/14
 
 Description
 ========
-Rainbow NanoRed 是一個 STM32F103C 的開發板，體積小、成本低、可以直接插在麵包板上，  
-沒有外加 LDO，需要 3V3 供電。
+Rainbow NanoRed 是一個 STM32F103C 的開發板，體積小、成本低、可以直接插在麵包板上，有外加 LDO，可以使用 5V 或 3V3 供電。
 
 Hardware
 ========
 * 控制器　 : [STM32F103C](http://www.st.com/web/catalog/mmc/FM141/SC1169/SS1031/LN1565/PF189782) 48Pin 72MHz
 * 其他外接 : 2 個按鍵 ( PA0, PB2 )、3 個 LED ( PC13, PC14, PC15 )、 1 個 UART ( PA9, PA10 )
-* PCB 尺寸 : 49.53 * 21.59mm
-* 設計軟體 [Altium Designer 13](http://www.altium.com/en/products/altium-designer) ( PcbLib use AD [PcbLib v?](https://github.com/OpenPCB/AltiumDesigner_PcbLibrary) )
+* PCB 尺寸 : 48.77 * 18.29mm
+* 設計軟體 [Altium Designer 13](http://www.altium.com/en/products/altium-designer) ( PcbLib use AD [PcbLib v0.3](https://github.com/OpenPCB/AltiumDesigner_PcbLibrary) )
 
 Program
 ========
@@ -46,20 +45,20 @@ Related Documents
 
 View
 ========
-<img src="https://lh3.googleusercontent.com/-UISm2nF5o8g/UhIqAIF4v2I/AAAAAAAADJQ/CWzskjaEDkI/s800/DSC_1368.jpg" height="450" width="800" />
-<img src="https://lh5.googleusercontent.com/-qzGqzY3_cOI/UhIp-01zr7I/AAAAAAAADHo/pIfqMPzipUc/s800/DSC_1356.jpg" height="450" width="800" />
-<img src="https://lh6.googleusercontent.com/-jNkXst9mv28/UhIp_bI6YfI/AAAAAAAADHs/Gp66VHfRq4s/s800/DSC_1358.jpg" height="450" width="800" />
+<img src="https://lh6.googleusercontent.com/-ejRshG_OBsQ/UtSHfTKIrEI/AAAAAAAAGO8/OwQ3M8ICMQ4/s800/DSC_1945.jpg" width="800" />
+<img src="https://lh5.googleusercontent.com/-JvIIr9zmsnQ/UtSHfnHSBII/AAAAAAAAGPY/6r7Qt-2j7jU/s800/DSC_1953.jpg" width="800" />
+
 <br />
 更多圖片 [Google+ albums](https://plus.google.com/u/0/photos/112822505513154783828/albums/5891276253041236273)
 
 Config
 ========
-<img src="https://lh5.googleusercontent.com/-6T36_S_h-PE/UhW1E5MEbMI/AAAAAAAADKk/DzNFtqE4yRg/s800/Config.png" height="379" width="800" />
-<img src="https://lh6.googleusercontent.com/-apIzuv-Nw0Q/UgUywlum8MI/AAAAAAAADEI/myUMY4F1qbo/s800/Config.png" height="505" width="800" />
+<img src="https://lh3.googleusercontent.com/-pO4Zn3CdW7Q/UtSHe5-LtEI/AAAAAAAAGOw/_tGj59N4i9I/s800/Config.png" width="800" />
+<img src="https://lh6.googleusercontent.com/-apIzuv-Nw0Q/UgUywlum8MI/AAAAAAAADEI/myUMY4F1qbo/s800/Config.png" width="800" />
 
 Schematic
 ========
-<img src="https://lh4.googleusercontent.com/-7AOvNVjDXLQ/UmWULziT-DI/AAAAAAAAEeg/1YHzUXQB1DY/s800/Sch.png" height="495" width="800" />
+<img src="https://lh5.googleusercontent.com/-72_bda1eDbU/UtSKSSGvUSI/AAAAAAAAGQM/E8ccDzY4F04/s800/RNR_Sch%2520v1.2.png" width="800" />
 <br />
 <br />
 <a href="http://www.oshwa.org/">
