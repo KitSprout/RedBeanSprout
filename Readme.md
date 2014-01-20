@@ -2,11 +2,20 @@
 ========
 * Author  : [Hom](https://github.com/Hom19910422)
 * Version : v1.2
-* Update  : 2014/01/14
+* Update  : 2014/01/20
 
 Description
 ========
 Rainbow NanoRed 是一個 STM32F103C 的開發板，體積小、成本低、可以直接插在麵包板上，有外加 LDO，可以使用 5V 或 3V3 供電。
+
+License
+========
+* 硬體(Hardware)採用 [CC BY-SA 3.0 TW](http://creativecommons.org/licenses/by-sa/3.0/tw/deed.zh_TW) 方式授權 
+  
+　　<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/"><img alt="創用 CC 授權條款" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/tw/80x15.png" /></a>  
+　　<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"> Rainbow NanoRed </span>由<a xmlns:cc="http://creativecommons.org/ns#" href="https://plus.google.com/u/0/112822505513154783828/posts" property="cc:attributionName" rel="cc:attributionURL"> Hom </a>製作，以<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/deed.zh_TW"> 創用CC 姓名標示-相同方式分享 3.0 台灣 授權條款 </a>釋出。  
+
+* 軟體(Software)採用 [Unlicense](http://unlicense.org) 方式授權  
 
 Hardware
 ========
@@ -45,24 +54,17 @@ Related Documents
 
 View
 ========
-<img src="https://lh6.googleusercontent.com/-ejRshG_OBsQ/UtSHfTKIrEI/AAAAAAAAGO8/OwQ3M8ICMQ4/s800/DSC_1945.jpg" width="800" />
-<img src="https://lh5.googleusercontent.com/-JvIIr9zmsnQ/UtSHfnHSBII/AAAAAAAAGPY/6r7Qt-2j7jU/s800/DSC_1953.jpg" width="800" />
+<img src="https://lh6.googleusercontent.com/-ejRshG_OBsQ/UtSHfTKIrEI/AAAAAAAAGO8/OwQ3M8ICMQ4/s1200/DSC_1945.jpg" />
+<img src="https://lh5.googleusercontent.com/-JvIIr9zmsnQ/UtSHfnHSBII/AAAAAAAAGPY/6r7Qt-2j7jU/s1200/DSC_1953.jpg" />
 
 <br />
 更多圖片 [Google+ albums](https://plus.google.com/u/0/photos/112822505513154783828/albums/5891276253041236273)
 
 Config
 ========
-<img src="https://lh3.googleusercontent.com/-pO4Zn3CdW7Q/UtSHe5-LtEI/AAAAAAAAGOw/_tGj59N4i9I/s800/Config.png" width="800" />
-<img src="https://lh6.googleusercontent.com/-apIzuv-Nw0Q/UgUywlum8MI/AAAAAAAADEI/myUMY4F1qbo/s800/Config.png" width="800" />
+<img src="https://lh3.googleusercontent.com/-pO4Zn3CdW7Q/UtSHe5-LtEI/AAAAAAAAGOw/_tGj59N4i9I/s1200/Config.png" />
+<img src="https://lh6.googleusercontent.com/-apIzuv-Nw0Q/UgUywlum8MI/AAAAAAAADEI/myUMY4F1qbo/s1200/Config.png" />
 
 Schematic
 ========
-<img src="https://lh5.googleusercontent.com/-72_bda1eDbU/UtSKSSGvUSI/AAAAAAAAGQM/E8ccDzY4F04/s800/RNR_Sch%2520v1.2.png" width="800" />
-<br />
-<br />
-<a href="http://www.oshwa.org/">
-<img src="https://lh5.googleusercontent.com/-nIBTA3RL8Hk/Ug8wr_ly3-I/AAAAAAAADFY/hAfv5LAzHag/s144/oshw-logo-800-px.png">
-<br />
-<br />
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/deed.zh_TW"><img alt="創用 CC 授權條款" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/tw/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"> Rainbow NanoRed </span>由<a xmlns:cc="http://creativecommons.org/ns#" href="https://plus.google.com/u/0/112822505513154783828/posts" property="cc:attributionName" rel="cc:attributionURL"> Hom </a>製作，以<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/deed.zh_TW">創用CC 姓名標示-相同方式分享 3.0 台灣 授權條款</a>釋出。<br />此作品衍生自<a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/Hom19910422" rel="dct:source"> Hom-GitHub </a>
+<img src="https://lh5.googleusercontent.com/-72_bda1eDbU/UtSKSSGvUSI/AAAAAAAAGQM/E8ccDzY4F04/s1200/RNR_Sch%2520v1.2.png" />
