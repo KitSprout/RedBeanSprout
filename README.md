@@ -1,8 +1,8 @@
-﻿[Rainbow NanoRed](https://github.com/Hom19910422/RainbowNanoRed)
+﻿[Rainbow NanoRed](https://github.com/Hom-Wang/RainbowNanoRed)
 ========
-* Author  : [Hom](https://github.com/Hom19910422)
+* Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v1.2
-* Update  : 2014/01/20
+* Update  : 2014/01/28
 
 Description
 ========
@@ -22,9 +22,9 @@ Hardware
 * 控制器　 : [STM32F103C](http://www.st.com/web/catalog/mmc/FM141/SC1169/SS1031/LN1565/PF189782) 48Pin 72MHz
 * 其他外接 : 2 個按鍵 ( PA0, PB2 )、3 個 LED ( PC13, PC14, PC15 )、 1 個 UART ( PA9, PA10 )
 * PCB 尺寸 : 48.77 * 18.29mm
-* 設計軟體 [Altium Designer 13](http://www.altium.com/en/products/altium-designer) ( PcbLib use AD [PcbLib v0.3](https://github.com/OpenPCB/AltiumDesigner_PcbLibrary) )
+* 設計軟體 [Altium Designer 13](http://www.altium.com/en/products/altium-designer) ( PcbLib use AD [PcbLib v0.3](https://github.com/OpenPCB/AltiumDesigner_PcbLibrary/releases/tag/v0.3) )
 
-Program
+Software
 ========
 * LAB_RNR_ADC ... ADC 轉換, 並傳資料至 PC
 * LAB_RNR_ADCtoPWM ... ADC 讀取, 並輸出至 PWM
