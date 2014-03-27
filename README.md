@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v1.2
-* Update  : 2014/01/28
+* Update  : 2014/03/27
 
 Description
 ========
@@ -30,7 +30,7 @@ Software
 * LAB_RNR_ADCtoPWM ... ADC 讀取, 並輸出至 PWM
 * LAB_RNR_EXTI ... 外部中斷
 * LAB_RNR_FLASH ... 內部 FLASH 讀寫
-* LAB_RNR_IAP ... [In-Application Programming](http://blog.csdn.net/ysdaniel/article/details/6631482) 程式, 從 PC 將 .bin 檔更新至 MCU ( PC 端使用 Python )
+* LAB_RNR_IAP ... [In-Application Programming](http://blog.csdn.net/ysdaniel/article/details/6631482), 從 PC 將 .bin 檔更新至 MCU ( PC 端使用 Python )
 * LAB_RNR_IAP_LED ... IAP LED 程式
 * LAB_RNR_IAP_TestBoard ... IAP TestBoard 程式
 * LAB_RNR_LED ... LED & KEY

@@ -27,8 +27,8 @@ int main( void )
   LCD_TestColoBar();
 
   while(1) {
-    LED_G = ~LED_G;
-    LED_B = ~LED_B;
+    LED_G = !LED_G;
+    LED_B = !LED_B;
     Delay_1ms(200);
   }
  
