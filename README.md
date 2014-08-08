@@ -27,6 +27,7 @@ Hardware
 Software
 ========
 * LAB_RNR_74HC168 ... 74HC168 測試
+* LAB_RNR_74HC595 ... 74HC595 測試
 * LAB_RNR_ADC ... ADC 轉換, 並傳資料至 PC
 * LAB_RNR_ADCtoPWM ... ADC 讀取, 並輸出至 PWM
 * LAB_RNR_EXTI ... 外部中斷
