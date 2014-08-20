@@ -65,6 +65,8 @@ View
 Config
 ========
 <img src="https://lh3.googleusercontent.com/-pO4Zn3CdW7Q/UtSHe5-LtEI/AAAAAAAAGOw/_tGj59N4i9I/s1200/Config.png" />
+<img src="https://lh6.googleusercontent.com/-cSErSoXiWu0/U_THzDjJ5KI/AAAAAAAAKos/DIKDPT2QM14/s1200/RNR_TOP.png" />
+<img src="https://lh6.googleusercontent.com/-H5DMLqgalEY/U_THzGqR4nI/AAAAAAAAKoc/mOaSZHRzeMM/s1200/RNR_BOT.png" />
 <img src="https://lh6.googleusercontent.com/-apIzuv-Nw0Q/UgUywlum8MI/AAAAAAAADEI/myUMY4F1qbo/s1200/Config.png" />
 
 Schematic
