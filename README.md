@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v1.2
-* Update  : 2014/08/09
+* Update  : 2014/08/23
 
 Description
 ========
@@ -17,6 +17,10 @@ License
 
 * 軟體(Software)採用 [Unlicense](http://unlicense.org) 方式授權  
 
+Rainbow NanoRed v2.0 預計修改： 
+>1. 去除 UART 90 度排針母座，更改成 Mirco USB。  
+>2. 盡量兼容 [STduino](https://github.com/MakerLabMe) and [Maple](https://github.com/leaflabs)。  
+
 Hardware
 ========
 * 控制器　 : [STM32F103C](http://www.st.com/web/catalog/mmc/FM141/SC1169/SS1031/LN1565/PF189782) 48Pin 72MHz
@@ -30,6 +34,7 @@ Software
 * LAB_RNR_74HC595 ... 74HC595 測試
 * LAB_RNR_ADC ... ADC 轉換, 並傳資料至 PC
 * LAB_RNR_ADCtoPWM ... ADC 讀取, 並輸出至 PWM
+* LAB_RNR_ADT7311 ... ADT7311 溫度感測
 * LAB_RNR_EXTI ... 外部中斷
 * LAB_RNR_FLASH ... 內部 FLASH 讀寫
 * LAB_RNR_IAP ... [In-Application Programming](http://blog.csdn.net/ysdaniel/article/details/6631482), 從 PC 將 .bin 檔更新至 MCU ( PC 端使用 Python )
@@ -44,11 +49,6 @@ Software
 * LAB_RNR_USART_IntRecv ... UART 中斷接收, 並發送接收到的資料至 PC ( PC 端使用 Python )
 * LAB_RNR_WDG ... WWDG & IWDG
 * TEST_RNR_TestBoard ... 板子測試 ( PC 端使用 Python )
-
-Get it
-========
-* 下載 PCB 送廠製作 & 依照 BOM 表購買元件自行焊接
-* 完成品可在以下賣場可購得 http://goods.ruten.com.tw/item/show?21308206227979
 
 Related Documents
 ========
