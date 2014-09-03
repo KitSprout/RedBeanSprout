@@ -1,16 +1,16 @@
-/* #include "module_sf168.h" */
+/* #include "module_sf164.h" */
 
-#ifndef __MODULE_SF168_H
-#define __MODULE_SF168_H
+#ifndef __MODULE_SF164_H
+#define __MODULE_SF164_H
 
 #include "stm32f10x.h"
 /*====================================================================================================*/
 /*====================================================================================================*/
-void SF168_Config( void );
-void SF168_Init( void );
-void SF168_Reset( void );
-void SF168_Shift( u8 SendData );
-void SF168_SendByte( u8 SendData );
+void SF164_Config( void );
+void SF164_Init( void );
+void SF164_Reset( void );
+void SF164_Shift( u8 SendData );
+void SF164_SendByte( u8 SendData );
 /*====================================================================================================*/
 /*====================================================================================================*/
 #endif

@@ -460,9 +460,9 @@
           <GroupName>Module</GroupName>
           <Files>
             <File>
-              <FileName>module_sf168.c</FileName>
+              <FileName>module_sf164.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Program\Modules\module_sf168.c</FilePath>
+              <FilePath>..\Program\Modules\module_sf164.c</FilePath>
             </File>
           </Files>
         </Group>
