@@ -28,6 +28,7 @@ Software
 * 開發環境 Keil uVision v5.13
 * BSR_TestGPIO ... GPIO 輸入輸出範例
 * BSR_TestPWM ... PWM 輸出範例
+* BSR_TestTIM ... Timer 計時範例
 * BSR_TestUSART ... USART 傳輸範例
 
 Related Documents
