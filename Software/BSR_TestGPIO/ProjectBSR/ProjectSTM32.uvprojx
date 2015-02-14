@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\Libraries\STM32F10x_StdPeriph_Driver\src;..\Program;..\Program\Algorithms;..\Program\Dirvers;..\Program\Modules</IncludePath>
+              <IncludePath>..\;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\Libraries\STM32F10x_StdPeriph_Driver\src;..\Program;..\Program\Algorithms;..\Program\Dirvers;..\Program\Modules;.\RTE;.\RTE\Device\STM32F103CB</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -406,21 +406,6 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Library</GroupName>
-          <Files>
-            <File>
-              <FileName>stm32f10x_rcc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Driver</GroupName>
           <Files>
             <File>
@@ -451,23 +436,6 @@
         </Group>
         <Group>
           <GroupName>::Device</GroupName>
-          <Files>
-            <File>
-              <FileName>RTE_Device.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>RTE\Device\STM32F103CB\RTE_Device.h</FilePath>
-            </File>
-            <File>
-              <FileName>startup_stm32f10x_md.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>RTE\Device\STM32F103CB\startup_stm32f10x_md.s</FilePath>
-            </File>
-            <File>
-              <FileName>system_stm32f10x.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>RTE\Device\STM32F103CB\system_stm32f10x.c</FilePath>
-            </File>
-          </Files>
         </Group>
       </Groups>
     </Target>
@@ -488,6 +456,24 @@
           <targetInfo name="STM32F103C"/>
         </targetInfos>
       </component>
+      <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cvendor="Keil" Cversion="3.5.1" condition="STM32F1 STDPERIPH">
+        <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
+        <targetInfos>
+          <targetInfo name="STM32F103C"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="GPIO" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH RCC">
+        <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
+        <targetInfos>
+          <targetInfo name="STM32F103C"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="RCC" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH">
+        <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
+        <targetInfos>
+          <targetInfo name="STM32F103C"/>
+        </targetInfos>
+      </component>
     </components>
     <files>
       <file attr="config" category="header" name="RTE_Driver\Config\RTE_Device.h">
@@ -501,6 +487,14 @@
       <file attr="config" category="source" condition="STM32F1xx MD" name="Device\Source\ARM\startup_stm32f10x_md.s">
         <instance index="0">RTE\Device\STM32F103CB\startup_stm32f10x_md.s</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS Device"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
+        <targetInfos>
+          <targetInfo name="STM32F103C"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="Device\StdPeriph_Driver\templates\stm32f10x_conf.h" version="3.5.0">
+        <instance index="0">RTE\Device\STM32F103CB\stm32f10x_conf.h</instance>
+        <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cvendor="Keil" Cversion="3.5.1" condition="STM32F1 STDPERIPH"/>
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.5"/>
         <targetInfos>
           <targetInfo name="STM32F103C"/>

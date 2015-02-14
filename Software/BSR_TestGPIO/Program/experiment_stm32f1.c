@@ -6,9 +6,7 @@
 /*====================================================================================================*/
 int main( void )
 {
-  SystemInit();
   GPIO_Config();
-  EXIO_Config();
 
   while(1) {
     LED_R = 1;
@@ -20,7 +18,7 @@ int main( void )
     GPIO_SetBits(GPIOB, GPIO_Pin_0  | GPIO_Pin_1  | GPIO_Pin_3  | GPIO_Pin_4  | GPIO_Pin_5  |
                         GPIO_Pin_6  | GPIO_Pin_7  | GPIO_Pin_8  | GPIO_Pin_9  | GPIO_Pin_10 |
                         GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
-    Delay_10ms(10);
+    Delay_100ms(1);
 
     LED_R = 0;
     LED_G = 0;
@@ -31,21 +29,21 @@ int main( void )
     GPIO_ResetBits(GPIOB, GPIO_Pin_0  | GPIO_Pin_1  | GPIO_Pin_3  | GPIO_Pin_4  | GPIO_Pin_5  |
                           GPIO_Pin_6  | GPIO_Pin_7  | GPIO_Pin_8  | GPIO_Pin_9  | GPIO_Pin_10 |
                           GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15);
-    Delay_10ms(10);
+    Delay_100ms(1);
 
     while(KEY_BO == 1) {
       LED_R = !LED_R;
       LED_G = !LED_G;
       LED_B = !LED_B;
-      Delay_10ms(20);
+      Delay_100ms(2);
     }
     while(KEY_WU == 1) {
       LED_R = !LED_R;
-      Delay_10ms(10);
+      Delay_100ms(1);
       LED_G = !LED_G;
-      Delay_10ms(10);
+      Delay_100ms(1);
       LED_B = !LED_B;
-      Delay_10ms(10);
+      Delay_100ms(1);
     }
   }
 }
@@ -55,9 +53,10 @@ void GPIO_Config( void )
 {
   GPIO_InitTypeDef GPIO_InitStruct;
 
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC, ENABLE);
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_AFIO, ENABLE);
+  GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);
 
-  /* PC13 LED_B */	/* PC14 LED_G */	/* PC15 LED_R */
+  /* LED_B PC13 */	/* LED_G PC14 */	/* LED_R PC15 */
   GPIO_InitStruct.GPIO_Pin = GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
   GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
@@ -71,20 +70,7 @@ void GPIO_Config( void )
   GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  LED_R = 1;
-  LED_G = 1;
-  LED_B = 1;
-}
-/*====================================================================================================*/
-/*====================================================================================================*/
-void EXIO_Config( void )
-{
-  GPIO_InitTypeDef GPIO_InitStruct;
-
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO, ENABLE);
-
-	GPIO_PinRemapConfig(GPIO_Remap_SWJ_JTAGDisable, ENABLE);
-
+  /* other pin */
   GPIO_InitStruct.GPIO_Pin = GPIO_Pin_1  | GPIO_Pin_2  | GPIO_Pin_3  | GPIO_Pin_4  | GPIO_Pin_5  |
                              GPIO_Pin_6  | GPIO_Pin_7  | GPIO_Pin_8  | GPIO_Pin_9  | GPIO_Pin_10 |
                              GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
@@ -97,6 +83,10 @@ void EXIO_Config( void )
   GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
   GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  LED_R = 1;
+  LED_G = 1;
+  LED_B = 1;
 }
 /*====================================================================================================*/
 /*====================================================================================================*/
