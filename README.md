@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.0
-* Update  : 2014/11/16
+* Update  : 2015/02/14
 
 Description
 ========
@@ -25,8 +25,9 @@ Hardware
 
 Software
 ========
-* 開發環境 Keil uVision v5.12
+* 開發環境 Keil uVision v5.13
 * BSR_TestGPIO ... GPIO 輸入輸出範例
+* BSR_TestUSART ... USART 傳輸範例
 
 Related Documents
 ========
