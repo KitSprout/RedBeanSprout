@@ -37,7 +37,7 @@ Software
 * [BSR_TestSF595](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestSF595) ... 74HC595 範例
 * [BSR_TestSystick](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestSystick) ... Systick 範例
 * [BSR_TestTIM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestTIM) ... Timer 計時範例
-* [BSR_TestUSART](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestUSART) ... USART 傳輸範例
+* [BSR_TestUART](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestUART) ... USART 傳輸範例
 * [BSR_TestWDG](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestWDG) ... Watch Dog 範例
 
 Related Documents
