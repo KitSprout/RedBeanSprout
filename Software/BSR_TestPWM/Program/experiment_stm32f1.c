@@ -50,7 +50,7 @@ int main( void )
       PWM10 = i;
       PWM11 = i;
       i++;
-      if(i>=PWM_MOTOR_MAX) {
+      if(i >= PWM_MOTOR_MAX) {
         i = PWM_MOTOR_MIN;
         LED_R = !LED_R;
       }
@@ -66,6 +66,7 @@ void GPIO_Config( void )
 {
   GPIO_InitTypeDef GPIO_InitStruct;
 
+  /* Clk Init *************************************************************/
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC, ENABLE);
   
   /* PC13 LED_B */	/* PC14 LED_G */	/* PC15 LED_R */
