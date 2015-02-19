@@ -7,7 +7,7 @@
 #define TIM_PIN   PAO(1)
 void TIM2_IRQHandler( void )
 {
-  TIM_PIN = !TIM_PIN;
+  LED_B = !LED_B;
   TIM_ClearFlag(TIM2, TIM_FLAG_Update);
 }
 
