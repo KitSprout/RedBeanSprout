@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.0
-* Update  : 2015/02/14
+* Update  : 2015/02/19
 
 Description
 ========
@@ -26,10 +26,19 @@ Hardware
 Software
 ========
 * 開發環境 Keil uVision v5.13
-* BSR_TestGPIO ... GPIO 輸入輸出範例
-* BSR_TestPWM ... PWM 輸出範例
-* BSR_TestTIM ... Timer 計時範例
-* BSR_TestUSART ... USART 傳輸範例
+* [BSR_TestADC](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestADC) ... ADC 讀取範例
+* [BSR_TestEXTI](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestEXTI) ... 外部中斷範例
+* [BSR_TestFLASH](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestFLASH) ... FLASH 讀寫範例
+* [BSR_TestGPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestGPIO) ... GPIO 輸入輸出範例
+* [BSR_TestMPU6050](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestMPU6050) ... MPU6050 範例
+* [BSR_TestPWM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestPWM) ... PWM 輸出範例
+* [BSR_TestPWR](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestPWR) ... Power Down 範例
+* [BSR_TestSF138](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestSF138) ... 74HC138 範例
+* [BSR_TestSF595](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestSF595) ... 74HC595 範例
+* [BSR_TestSystick](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestSystick) ... Systick 範例
+* [BSR_TestTIM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestTIM) ... Timer 計時範例
+* [BSR_TestUSART](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestUSART) ... USART 傳輸範例
+* [BSR_TestWDG](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestWDG) ... Watch Dog 範例
 
 Related Documents
 ========
