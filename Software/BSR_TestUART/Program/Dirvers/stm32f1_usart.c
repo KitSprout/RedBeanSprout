@@ -11,7 +11,7 @@
 **使用 : UART_SendByte(USART1, 'A');
 **====================================================================================================*/
 /*====================================================================================================*/
-void UART_SendByte( USART_TypeDef* USARTx, int8_t* SendData )
+void UART_SendByte( USART_TypeDef *USARTx, int8_t *SendData )
 {
   USART_SendData(USARTx, *SendData);
   while(USART_GetFlagStatus(USARTx, USART_FLAG_TXE) == RESET);
@@ -25,7 +25,7 @@ void UART_SendByte( USART_TypeDef* USARTx, int8_t* SendData )
 **使用 : UART_RecvByte(USART1, RecvData);
 **====================================================================================================*/
 /*====================================================================================================*/
-void UART_RecvByte( USART_TypeDef* USARTx, int8_t* RecvData )
+void UART_RecvByte( USART_TypeDef *USARTx, int8_t *RecvData )
 {
   while(USART_GetFlagStatus(USARTx, USART_FLAG_RXNE) == RESET);
   *RecvData = USART_ReceiveData(USARTx);
@@ -39,7 +39,7 @@ void UART_RecvByte( USART_TypeDef* USARTx, int8_t* RecvData )
 **使用 : UART_RecvByteWTO(USART1, RecvData, 200);
 **====================================================================================================*/
 /*====================================================================================================*/
-int8_t UART_RecvByteWTO( USART_TypeDef* USARTx, int8_t* RecvData, int32_t TimeoutMs )
+int8_t UART_RecvByteWTO( USART_TypeDef *USARTx, int8_t *RecvData, int32_t TimeoutMs )
 {
   while(USART_GetFlagStatus(USARTx, USART_FLAG_RXNE) == RESET) {
     if(TimeoutMs >= 0) {
@@ -63,7 +63,7 @@ int8_t UART_RecvByteWTO( USART_TypeDef* USARTx, int8_t* RecvData, int32_t Timeou
 **使用 : UART_SendByte(USART1, SendData, DataLen);
 **====================================================================================================*/
 /*====================================================================================================*/
-void UART_SendData( USART_TypeDef* USARTx, int8_t* SendData, uint16_t DataLen )
+void UART_SendData( USART_TypeDef *USARTx, int8_t *SendData, uint16_t DataLen )
 {
   do {
     UART_SendByte(USARTx, SendData);
@@ -79,7 +79,7 @@ void UART_SendData( USART_TypeDef* USARTx, int8_t* SendData, uint16_t DataLen )
 **使用 : UART_RecvData(USART1, RecvData, DataLen);
 **====================================================================================================*/
 /*====================================================================================================*/
-void UART_RecvData( USART_TypeDef* USARTx, int8_t* RecvData, uint16_t DataLen )
+void UART_RecvData( USART_TypeDef *USARTx, int8_t *RecvData, uint16_t DataLen )
 {
   do {
     UART_RecvByte(USARTx, RecvData++);
@@ -94,7 +94,7 @@ void UART_RecvData( USART_TypeDef* USARTx, int8_t* RecvData, uint16_t DataLen )
 **使用 : UART_RecvDataWTO(USART1, RecvData, DataLen, 200);
 **====================================================================================================*/
 /*====================================================================================================*/
-int8_t UART_RecvDataWTO( USART_TypeDef* USARTx, int8_t* RecvData, uint16_t DataLen, int32_t TimeoutMs )
+int8_t UART_RecvDataWTO( USART_TypeDef *USARTx, int8_t *RecvData, uint16_t DataLen, int32_t TimeoutMs )
 {
   int8_t State = ERROR;
 
