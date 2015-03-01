@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.0
-* Update  : 2015/02/19
+* Update  : 2015/03/02
 
 Description
 ========
@@ -38,6 +38,7 @@ Software
 * [BSR_TestSystick](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestSystick) ... Systick 範例
 * [BSR_TestTIM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestTIM) ... Timer 計時範例
 * [BSR_TestUART](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestUART) ... USART 傳輸範例
+* [BSR_TestUART-IntRecv](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestUART-IntRecv) ... USART 中斷接收範例
 * [BSR_TestWDG](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_TestWDG) ... Watch Dog 範例
 
 Related Documents
