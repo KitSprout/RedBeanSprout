@@ -1,34 +1,36 @@
 /*====================================================================================================*/
 /*====================================================================================================*/
+#include <stdio.h>
+
 #include "stm32f1_system.h"
 #include "experiment_stm32f1.h"
 #include "module_rs232.h"
 /*====================================================================================================*/
 /*====================================================================================================*/
-#define RECV_DATA_SIZE    1
-#define RECV_DATA_TIMEOUT 500
-
 int main( void )
 {
-  int8_t State = ERROR;
-  int8_t RecvData = 0;
+  static uint8_t i = 0;
+  static uint8_t RecvData = 0;
+  static int8_t State = ERROR;
 
   GPIO_Config();
   RS232_Config();
 
   LED_R = 0;
 
-  RS232_SendStr((int8_t*)"\r\nHello World!\r\n\r\n");
+  printf("\r\nHello World!\r\n\r\n");
 
   while(1) {
     LED_G = !LED_G;
-    State = RS232_RecvDataWTO(&RecvData, RECV_DATA_SIZE, RECV_DATA_TIMEOUT);
-    if(State == ERROR)
-      RS232_SendStr((int8_t*)"Timeout ... \r\n");
+    State = RS232_RecvDataWTO((int8_t*)&RecvData, 1, 200);
+    if(State == ERROR) {
+      printf("Timeout ... %d\r\n", i);
+      i = (i == 255) ? 0 : i + 1;
+    }
     else if(RecvData == 0x0D)  // if press enter
       RS232_SendStr((int8_t*)"\r\n");
     else
-      RS232_SendData(&RecvData, RECV_DATA_SIZE);
+      RS232_SendData((int8_t*)&RecvData, 1);
   }
 }
 /*====================================================================================================*/
