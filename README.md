@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.0
-* Update  : 2015/03/03
+* Update  : 2015/03/06
 
 Description
 ========
@@ -16,6 +16,8 @@ License
 　　<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"> RedBeanSprout v2.0 </span>由<a xmlns:cc="http://creativecommons.org/ns#" href="http://about.me/Hom" property="cc:attributionName" rel="cc:attributionURL"> Hom </a>製作，以<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW"> 創用CC 姓名標示-相同方式分享 4.0 國際 授權條款 </a>釋出。  
 
 * 軟體(Software)採用 [MIT License](http://opensource.org/licenses/MIT) 方式授權  
+
+> 預計加入 STM32F303CC 版本，CortexM4，72MHz，腳位完全相容 STM32F103CB。
 
 Hardware
 ========
