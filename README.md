@@ -23,7 +23,7 @@ Hardware
 ========
 * 控制器　 : [STM32F103C](http://www.st.com/web/catalog/mmc/FM141/SC1169/SS1031/LN1565/PF189782) 48Pin 72MHz
 * PCB 尺寸 : 15.24 * 43.18mm
-* 設計軟體 [Altium Designer 14](http://www.altium.com/en/products/altium-designer) ( PcbLib use AD [PcbLib v1.2](https://github.com/KitSprout/AltiumDesigner_PcbLibrary/releases/tag/v1.1) )
+* 設計軟體 [Altium Designer 14](http://www.altium.com/en/products/altium-designer) ( PcbLib use AD [PcbLib v1.2](https://github.com/KitSprout/AltiumDesigner_PcbLibrary/releases/tag/v1.2) )
 
 Software
 ========
