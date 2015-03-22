@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.2
-* Update  : 2015/03/20
+* Update  : 2015/03/22
 
 Description
 ========
@@ -57,7 +57,7 @@ View
 
 Config
 ========
-<img src="https://lh4.googleusercontent.com/-tmirlF6z7gA/VQcaInEauHI/AAAAAAAAL1o/FEfs3-g6HG8/s1600/Config_v2.2.png" />
+<img src="https://lh3.googleusercontent.com/-dYO0WGnJa1w/VQ5zEcizwII/AAAAAAAAL9o/bA5z3fE46Jw/s1600/Config_v2.2.png" />
 
 Schematic
 ========
