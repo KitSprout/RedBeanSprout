@@ -1,12 +1,12 @@
-﻿[RedBeanSprout](https://github.com/KitSprout/RedBeanSprout)
+[RedBeanSprout](https://github.com/KitSprout/RedBeanSprout)
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.2
-* Update  : 2015/03/22
+* Update  : 2015/03/27
 
 Description
 ========
-RedBeanSprout 是一個 STM32F103C 的開發板，體積小、成本低、可以直接插在麵包板上，有外加 LDO，可以使用 5V 或 3V3 供電。
+RedBeanSprout 是一個 STM32F103C / STM32F303C 的開發板，有 CortexM3 與 CortexM4 兩種版本，皆工作於 72 MHz 時脈下，體積小、成本低、可以直接插在麵包板上，有外加 LDO，可以使用 5V 或 3V3 供電。
 
 License
 ========
@@ -18,11 +18,9 @@ License
 
 * 軟體(Software)採用 [MIT License](http://opensource.org/licenses/MIT) 方式授權  
 
-> 預計加入 STM32F303CC 版本，CortexM4，72MHz，腳位完全相容 STM32F103CB。
-
 Hardware
 ========
-* 控制器　 : [STM32F103C](http://www.st.com/web/catalog/mmc/FM141/SC1169/SS1031/LN1565/PF189782) 48Pin 72MHz
+* 控制器　 : [STM32F103C](http://www.st.com/web/catalog/mmc/FM141/SC1169/SS1031/LN1565/PF189782) / [STM32F303C](http://www.st.com/web/catalog/mmc/FM141/SC1169/SS1576/LN1531/PF253449) 48Pin 72MHz
 * PCB 尺寸 : 15.24 * 43.18mm
 * 設計軟體 [Altium Designer 15](http://www.altium.com/en/products/altium-designer) ( PcbLib use AD [PcbLib v1.2](https://github.com/KitSprout/AltiumDesigner_PcbLibrary/releases/tag/v1.2) )
 
@@ -47,6 +45,17 @@ Software
 * [BSR_Module_SF138](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_SF138) ... [74HC138](https://github.com/KitSprout/74HC138) 範例
 * [BSR_Module_SF595](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_SF595) ... [74HC595](https://github.com/KitSprout/74HC595) 範例
 * [BSR_Module_TFT2.2](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_TFT2.2) ... [TFT2.2-inch](https://github.com/KitSprout/TFT_2.2-inch) 範例
+  
+RedBeanSprout CortexM4 版本  
+* [BSR_M4_Peripheral_EXTI](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_EXTI) ... 外部中斷範例
+* [BSR_M4_Peripheral_FLASH](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_FLASH) ... FLASH 讀寫範例
+* [BSR_M4_Peripheral_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_GPIO) ... GPIO 輸入輸出範例
+* [BSR_M4_Peripheral_PWM](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_PWM) ... PWM 輸出範例
+* [BSR_M4_Peripheral_Systick](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_Systick) ... Systick 範例
+* [BSR_M4_Peripheral_TIM](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_TIM) ... Timer 計時範例
+* [BSR_M4_Peripheral_UART](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_UART) ... USART 傳輸範例
+* [BSR_M4_Peripheral_UART_AutoBaudRate](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_UART_AutoBaudRate) ... USART 鮑率自動調整
+* [BSR_M4_Peripheral_UART_IntRecv](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_UART_IntRecv) ... USART 中斷接收範例
 
 Related Documents
 ========
