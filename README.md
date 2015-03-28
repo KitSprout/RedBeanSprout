@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.2
-* Update  : 2015/03/27
+* Update  : 2015/03/28
 
 Description
 ========
@@ -38,6 +38,7 @@ Software
 * [BSR_Peripheral_UART](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Peripheral_UART) ... USART 傳輸範例
 * [BSR_Peripheral_UART_IntRecv](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Peripheral_UART_IntRecv) ... USART 中斷接收範例
 * [BSR_Peripheral_WDG](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Peripheral_WDG) ... Watch Dog 範例
+* [BSR_Module_DAC-DAC128S085](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_DAC-DAC128S085) ... DAC128S085 範例
 * [BSR_Module_DAC-DAC8311](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_DAC-DAC8311) ... [DAC8311](https://github.com/KitSprout/DAC-DAC8311) 範例
 * [BSR_Module_DigiPot-AD5292](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_DigiPot-AD5292) ... [AD5292](https://github.com/KitSprout/DigiPot-AD5292) 範例
 * [BSR_Module_Flash-W25Q](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_Flash-W25Q) ... [W25Qxx](https://github.com/KitSprout/Flash-W25Q) 範例
@@ -56,6 +57,10 @@ RedBeanSprout CortexM4 版本
 * [BSR_M4_Peripheral_UART](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_UART) ... USART 傳輸範例
 * [BSR_M4_Peripheral_UART_AutoBaudRate](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_UART_AutoBaudRate) ... USART 鮑率自動調整
 * [BSR_M4_Peripheral_UART_IntRecv](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_UART_IntRecv) ... USART 中斷接收範例
+* [BSR_M4_Module_SF138](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Module_SF138) ... [74HC138](https://github.com/KitSprout/74HC138) 範例
+* [BSR_M4_Module_SF595](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Module_SF595) ... [74HC595](https://github.com/KitSprout/74HC595) 範例
+* [BSR_M4_Module_TFT2.2](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Module_TFT2.2) ... [TFT2.2-inch](https://github.com/KitSprout/TFT_2.2-inch) 範例
+* [BSR_M4_Module_TFT2.2_WaveForm](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Module_TFT2.2_WaveForm) ... [TFT2.2-inch](https://github.com/KitSprout/TFT_2.2-inch) 示波器範例
 
 Related Documents
 ========
