@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.2
-* Update  : 2015/03/28
+* Update  : 2015/03/29
 
 Description
 ========
@@ -48,6 +48,7 @@ Software
 * [BSR_Module_TFT2.2](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_TFT2.2) ... [TFT2.2-inch](https://github.com/KitSprout/TFT_2.2-inch) 範例
   
 RedBeanSprout CortexM4 版本  
+* [BSR_M4_Peripheral_ADC](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_ADC) ... ADC 讀取範例
 * [BSR_M4_Peripheral_EXTI](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_EXTI) ... 外部中斷範例
 * [BSR_M4_Peripheral_FLASH](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_FLASH) ... FLASH 讀寫範例
 * [BSR_M4_Peripheral_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_GPIO) ... GPIO 輸入輸出範例
