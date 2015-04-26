@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.2
-* Update  : 2015/03/29
+* Update  : 2015/04/26
 
 Description
 ========
@@ -78,3 +78,7 @@ Config
 Schematic
 ========
 <img src="https://lh5.googleusercontent.com/-m0ccQtZ--AM/VQcaIvHzk0I/AAAAAAAAL10/y6l9HnhyKic/s1600/Sch_RedBeanSprout_v2.2.png" />
+
+Get it
+========
+http://goods.ruten.com.tw/item/show?21512671509234
