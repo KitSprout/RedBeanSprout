@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.2
-* Update  : 2015/04/26
+* Update  : 2015/05/09
 
 Description
 ========
@@ -43,6 +43,7 @@ Software
 * [BSR_Module_DigiPot-AD5292](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_DigiPot-AD5292) ... [AD5292](https://github.com/KitSprout/DigiPot-AD5292) 範例
 * [BSR_Module_Flash-W25Q](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_Flash-W25Q) ... [W25Qxx](https://github.com/KitSprout/Flash-W25Q) 範例
 * [BSR_Module_MPU6050](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_MPU6050) ... MPU6050 範例
+* [BSR_Module_MPU9255](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_MPU9255_SPI) ... MPU9255-SPI 範例
 * [BSR_Module_SF138](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_SF138) ... [74HC138](https://github.com/KitSprout/74HC138) 範例
 * [BSR_Module_SF595](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_SF595) ... [74HC595](https://github.com/KitSprout/74HC595) 範例
 * [BSR_Module_TFT2.2](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_TFT2.2) ... [TFT2.2-inch](https://github.com/KitSprout/TFT_2.2-inch) 範例
@@ -81,4 +82,4 @@ Schematic
 
 Get it
 ========
-http://goods.ruten.com.tw/item/show?21512671509234
+[露天拍賣 Ruten](http://goods.ruten.com.tw/item/show?21512671509234)
