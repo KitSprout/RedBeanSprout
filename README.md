@@ -2,11 +2,13 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.2
-* Update  : 2015/05/09
+* Update  : 2015/06/20
 
 Description
 ========
 RedBeanSprout 是一個 STM32F103C / STM32F303C 的開發板，有 CortexM3 與 CortexM4 兩種版本，皆工作於 72 MHz 時脈下，體積小、成本低、可以直接插在麵包板上，有外加 LDO，可以使用 5V 或 3V3 供電。
+
+ > 預計結合 [STM32duino](https://github.com/rogerclarkmelbourne/Arduino_STM32) 實現在 arduino IDE 上開發和燒錄。
 
 License
 ========
@@ -26,7 +28,9 @@ Hardware
 
 Software
 ========
-* 開發環境 Keil uVision v5.14
+* 開發環境 Keil uVision v5.14  
+
+RedBeanSprout CortexM3 版本  
 * [BSR_Peripheral_ADC](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Peripheral_ADC) ... ADC 讀取範例
 * [BSR_Peripheral_EXTI](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Peripheral_EXTI) ... 外部中斷範例
 * [BSR_Peripheral_FLASH](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Peripheral_FLASH) ... FLASH 讀寫範例
@@ -38,6 +42,7 @@ Software
 * [BSR_Peripheral_UART](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Peripheral_UART) ... USART 傳輸範例
 * [BSR_Peripheral_UART_IntRecv](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Peripheral_UART_IntRecv) ... USART 中斷接收範例
 * [BSR_Peripheral_WDG](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Peripheral_WDG) ... Watch Dog 範例
+* [BSR_PeripheralHAL_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheraHAL_GPIO) ... GPIO 輸入輸出範例 (HAL Driver)
 * [BSR_Module_DAC-DAC128S085](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_DAC-DAC128S085) ... DAC128S085 範例
 * [BSR_Module_DAC-DAC8311](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_DAC-DAC8311) ... [DAC8311](https://github.com/KitSprout/DAC-DAC8311) 範例
 * [BSR_Module_DigiPot-AD5292](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_DigiPot-AD5292) ... [AD5292](https://github.com/KitSprout/DigiPot-AD5292) 範例
