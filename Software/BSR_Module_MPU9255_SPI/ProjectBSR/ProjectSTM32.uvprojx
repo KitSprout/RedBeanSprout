@@ -84,6 +84,8 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopA1X>0</nStopA1X>
+            <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
           <SVCSIdString></SVCSIdString>
@@ -347,10 +349,10 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>4</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
-            <OneElfS>0</OneElfS>
+            <OneElfS>1</OneElfS>
             <Strict>0</Strict>
             <EnumInt>0</EnumInt>
             <PlainCh>0</PlainCh>
@@ -361,6 +363,8 @@
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
             <useXO>0</useXO>
+            <v6Lang>0</v6Lang>
+            <v6LangP>0</v6LangP>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD, USE_STDPERIPH_DRIVER</Define>
@@ -418,6 +422,11 @@
               <FileType>1</FileType>
               <FilePath>..\Program\Dirvers\stm32f1_spi.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f1_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Program\Dirvers\stm32f1_usart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -427,6 +436,11 @@
               <FileName>experiment_stm32f1.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Program\experiment_stm32f1.c</FilePath>
+            </File>
+            <File>
+              <FileName>experiment_stm32f1_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Program\experiment_stm32f1_it.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -438,10 +452,22 @@
               <FileType>1</FileType>
               <FilePath>..\Program\Modules\module_mpu9255.c</FilePath>
             </File>
+            <File>
+              <FileName>module_rs232.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Program\Modules\module_rs232.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Algorithm</GroupName>
+          <Files>
+            <File>
+              <FileName>algorithm_string.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Program\Algorithms\algorithm_string.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
@@ -456,8 +482,14 @@
   <RTE>
     <apis/>
     <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="3.40.0" condition="CMSIS Core">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.2.0"/>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.1.0" condition="CMSIS Core">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.3.0"/>
+        <targetInfos>
+          <targetInfo name="STM32F103C"/>
+        </targetInfos>
+      </component>
+      <component Cclass="CMSIS" Cgroup="DSP" Cvendor="ARM" Cversion="1.4.5" condition="CMSIS DSP">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.3.0"/>
         <targetInfos>
           <targetInfo name="STM32F103C"/>
         </targetInfos>
@@ -493,6 +525,12 @@
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="TIM" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH RCC">
+        <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.1.0"/>
+        <targetInfos>
+          <targetInfo name="STM32F103C"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="USART" Cvendor="Keil" Cversion="3.5.0" condition="STM32F1 STDPERIPH RCC">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="1.1.0"/>
         <targetInfos>
           <targetInfo name="STM32F103C"/>

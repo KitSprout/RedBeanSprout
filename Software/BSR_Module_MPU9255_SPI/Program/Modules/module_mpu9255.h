@@ -68,12 +68,17 @@ typedef enum {
   MPU_AccFS_8g  = 0x10,
   MPU_AccFS_16g = 0x18
 } MPU_AccFS_TypeDef;
+typedef enum {
+  MPU_MagFS_14b = 0x00,
+  MPU_MagFS_16b = 0x10
+} MPU_MagFS_TypeDef;
 
 typedef struct {
   MPU_GyrFS_TypeDef  MPU_Gyr_FullScale;
   MPU_GyrLPF_TypeDef MPU_Gyr_LowPassFilter;
   MPU_AccFS_TypeDef  MPU_Acc_FullScale;
   MPU_AccLPF_TypeDef MPU_Acc_LowPassFilter;
+  MPU_MagFS_TypeDef  MPU_Mag_FullScale;
 } MPU_InitTypeDef;
 
 
@@ -202,7 +207,7 @@ typedef struct {
 
 /* ---- AK8963 Reg In MPU9255 ----------------------------------------------- */
 
-#define AK8963_I2C_ADDR             ((uint8_t)0x18)
+#define AK8963_I2C_ADDR             ((uint8_t)0x0C)
 #define AK8963_Device_ID            ((uint8_t)0x48)
 
 // Read-only Reg
@@ -229,9 +234,17 @@ typedef struct {
 #define AK8963_ASAZ                 ((uint8_t)0x12)
 /*=====================================================================================================*/
 /*=====================================================================================================*/
-void MPU9255_Config( void );
-void MPU9255_Init( MPU_InitTypeDef *MPUx );
-void MPU9255_GetData( uint8_t *ReadBuf );
+static void    MPU9255_WriteReg( uint8_t WriteAddr, uint8_t WriteData );
+static uint8_t MPU9255_ReadReg( uint8_t ReadAddr );
+static void    MPU9255_ReadRegs( uint8_t ReadAddr, uint8_t *ReadBuf, uint8_t Bytes );
+static void    MPU9255_Mag_WriteReg( uint8_t WriteAddr, uint8_t WriteData );
+static uint8_t MPU9255_Mag_ReadReg( uint8_t ReadAddr );
+static void    MPU9255_SetSpeed( uint8_t SpeedSel );
+
+void    MPU9255_Config( void );
+uint8_t MPU9255_Init( MPU_InitTypeDef *MPUx );
+uint8_t MPU9255_Check( void );
+void    MPU9255_getData( int16_t *IMU_Buf );
 /*=====================================================================================================*/
 /*=====================================================================================================*/
 #endif
