@@ -45,11 +45,11 @@ RedBeanSprout CortexM3 版本
 * [BSR_Peripheral_UART_IntRecv](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Peripheral_UART_IntRecv) ... USART 中斷接收範例
 * [BSR_Peripheral_WDG](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Peripheral_WDG) ... Watch Dog 範例
 * [BSR_PeripheralHAL_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheraHAL_GPIO) ... GPIO 輸入輸出範例 (HAL Driver)
-* [BSR_PeripheralHAL_TIM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheraHAL_GPIO) ... TIM 計時中斷範例 (HAL Driver)
-* [BSR_PeripheralHAL_TIM-InputCap](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheraHAL_GPIO) ... TIM 輸入捕捉範例 (HAL Driver)
-* [BSR_PeripheralHAL_TIM-PWM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheraHAL_GPIO) ... TIM PWM 輸出範例 (HAL Driver)
-* [BSR_PeripheralHAL_UART](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheraHAL_GPIO) ... UART 傳輸範例 (HAL Driver)
-* [BSR_PeripheralHAL_UART-IntRecv](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheraHAL_GPIO) ... UART 中斷接收範例 (HAL Driver)
+* [BSR_PeripheralHAL_TIM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_TIM) ... TIM 計時中斷範例 (HAL Driver)
+* [BSR_PeripheralHAL_TIM-InputCap](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_TIM-InputCap) ... TIM 輸入捕捉範例 (HAL Driver)
+* [BSR_PeripheralHAL_TIM-PWM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_TIM-PWM) ... TIM PWM 輸出範例 (HAL Driver)
+* [BSR_PeripheralHAL_UART](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_UART) ... UART 傳輸範例 (HAL Driver)
+* [BSR_PeripheralHAL_UART-IntRecv](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_UART-IntRecv) ... UART 中斷接收範例 (HAL Driver)
 * [BSR_Module_DAC-DAC128S085](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_DAC-DAC128S085) ... DAC128S085 範例
 * [BSR_Module_DAC-DAC8311](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_DAC-DAC8311) ... [DAC8311](https://github.com/KitSprout/DAC-DAC8311) 範例
 * [BSR_Module_DigiPot-AD5292](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_DigiPot-AD5292) ... [AD5292](https://github.com/KitSprout/DigiPot-AD5292) 範例
