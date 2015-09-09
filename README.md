@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.2
-* Update  : 2015/09/04
+* Update  : 2015/09/09
 
 Description
 ========
@@ -59,7 +59,9 @@ RedBeanSprout CortexM3 版本
 * [BSR_Module_SF138](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_SF138) ... [74HC138](https://github.com/KitSprout/74HC138) 範例
 * [BSR_Module_SF595](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_SF595) ... [74HC595](https://github.com/KitSprout/74HC595) 範例
 * [BSR_Module_TFT2.2](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_Module_TFT2.2) ... [TFT2.2-inch](https://github.com/KitSprout/TFT_2.2-inch) 範例
-  
+* [BSR_ModuleHAL_MPU9250](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_ModuleHAL_MPU9250-SPI) ... MPU9250-SPI 範例
+* [BSR_ModuleHAL_DAC-DAC128S085](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_ModuleHAL_DAC128S085) ... DAC128S085 範例
+
 RedBeanSprout CortexM4 版本  
 * [BSR_M4_Peripheral_ADC](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_ADC) ... ADC 讀取範例
 * [BSR_M4_Peripheral_EXTI](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_EXTI) ... 外部中斷範例
