@@ -42,10 +42,10 @@
 #define PGI(Pin)  Bit_Addr(GPIOG_IDR_Addr, Pin)
 /*====================================================================================================*/
 /*====================================================================================================*/
-#define __GPIO_SET(_PORT, _PIN)    (_PORT->BSRR = _PIN)
-#define __GPIO_RST(_PORT, _PIN)    (_PORT->BRR  = _PIN)
-#define __GPIO_TOG(_PORT, _PIN)    (_PORT->ODR ^= _PIN)
-#define __GPIO_READ(_PORT, _PIN)   (_PORT->IDR  & _PIN)
+#define __GPIO_SET(_PORT, _PIN)   (_PORT->BSRR = _PIN)
+#define __GPIO_RST(_PORT, _PIN)   (_PORT->BSRR = (uint32_t)_PIN << 16)
+#define __GPIO_TOG(_PORT, _PIN)   (_PORT->ODR ^= _PIN)
+#define __GPIO_READ(_PORT, _PIN)  (_PORT->IDR  & _PIN)
 /*====================================================================================================*/
 /*====================================================================================================*/
 #define U8_MAX  ((uint8_t)255)

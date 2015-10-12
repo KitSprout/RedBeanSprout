@@ -2,7 +2,6 @@
 /*====================================================================================================*/
 #include "drivers\stm32f1_system.h"
 #include "drivers\stm32f1_usart.h"
-
 #include "algorithms\algorithm_string.h"
 
 #include "module_rs232.h"

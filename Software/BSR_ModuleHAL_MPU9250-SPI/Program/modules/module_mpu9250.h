@@ -1,4 +1,4 @@
-/* #include "module_MPU9250.h" */
+/* #include "module_mpu9250.h" */
 
 #ifndef __MODULE_MPU9250_H
 #define __MODULE_MPU9250_H

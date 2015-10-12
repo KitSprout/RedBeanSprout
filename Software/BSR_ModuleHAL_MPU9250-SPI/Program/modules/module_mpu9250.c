@@ -34,7 +34,6 @@
 #define SPIx_SDI_AF                 GPIO_AF5_SPI2
 
 #define _USE_MAG_AK8963
-#define MAG_READ_DELAY 50
 /*====================================================================================================*/
 /*====================================================================================================*/
 static SPI_HandleTypeDef SPI_HandleStruct;
@@ -112,7 +111,7 @@ static void MPU9250_Mag_WriteReg( uint8_t WriteAddr, uint8_t WriteData )
 
   do {
     status = MPU9250_ReadReg(MPU6500_I2C_MST_STATUS);
-  } while(((status & 0x40) == 0) && (timeout++ < MAG_READ_DELAY));
+  } while(((status & 0x40) == 0) && (timeout++ < 50));
 }
 /*=====================================================================================================*/
 /*=====================================================================================================*
@@ -135,7 +134,7 @@ static uint8_t MPU9250_Mag_ReadReg( uint8_t ReadAddr )
 
   do {
     status = MPU9250_ReadReg(MPU6500_I2C_MST_STATUS);
-  } while(((status & 0x40) == 0) && (timeout++ < MAG_READ_DELAY));
+  } while(((status & 0x40) == 0) && (timeout++ < 50));
 
   ReadData = MPU9250_ReadReg(MPU6500_I2C_SLV4_DI);
 
@@ -246,7 +245,7 @@ uint8_t MPU9250_Init( MPU_InitTypeDef *MPUx )
   };
   uint8_t AK8963_InitData[AK8963_InitRegNum][2] = {
     {0x01, AK8963_CNTL2},           // Reset Device
-    {0x02, AK8963_CNTL1},           // Continuous measurement mode 1
+    {0x06, AK8963_CNTL1},           // Continuous measurement mode 2
   };
 
   MPU6500_InitData[5][0] = MPUx->MPU_Gyr_FullScale;       // MPU6500_GYRO_CONFIG
@@ -337,10 +336,6 @@ void MPU9250_getData( int16_t *dataIMU )
   dataIMU[7] = (Byte16(int16_t, tmpRead[16], tmpRead[15]));   // Mag.X
   dataIMU[8] = (Byte16(int16_t, tmpRead[18], tmpRead[17]));   // Mag.Y
   dataIMU[9] = (Byte16(int16_t, tmpRead[20], tmpRead[19]));   // Mag.Z
-#else
-  dataIMU[7] = 0;   // Mag.X
-  dataIMU[8] = 0;   // Mag.Y
-  dataIMU[9] = 0;   // Mag.Z
 #endif  
 }
 /*==============================================================================================*/
