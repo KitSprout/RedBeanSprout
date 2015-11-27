@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    system_stm32f1xx.c
   * @author  MCD Application Team
-  * @version V1.0.0
-  * @date    17-December-2014
+  * @version V4.0.1
+  * @date    31-July-2015
   * @brief   CMSIS Cortex-M3 Device Peripheral Access Layer System Source File.
   * 
   * 1.  This file provides two functions and one global variable to be called from 
@@ -35,7 +35,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT(c) 2014 STMicroelectronics</center></h2>
+  * <h2><center>&copy; COPYRIGHT(c) 2015 STMicroelectronics</center></h2>
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -139,7 +139,7 @@
   uint32_t SystemCoreClock         = 72000000;        /*!< System Clock Frequency (Core Clock) */
 #endif
 
-__IO const uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+const uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
 /**
   * @}
   */
@@ -421,7 +421,7 @@ void SystemInit_ExtMemCtl(void)
   GPIOF->CRH = 0xBBBB4444;
 
   GPIOG->CRL = 0x44BBBBBB;  
-  GPIOG->CRH = 0x44444B44;
+  GPIOG->CRH = 0x444B4B44;
    
 /*----------------  FSMC Configuration ---------------------------------------*/  
 /*----------------  Enable FSMC Bank1_SRAM Bank ------------------------------*/
