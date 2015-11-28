@@ -34,9 +34,9 @@ Software
 ========
 RedBeanSprout CortexM3 版本  
 Use HAL Library  
-* [BSR_PeripheralHAL_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheraHAL_GPIO) ... GPIO 輸入輸出範例
-* [BSR_PeripheralHAL_EXIT](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheraHAL_EXIT) ... EXIT 中斷範例
-* [BSR_PeripheralHAL_FLASH](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheraHAL_FLASH) ... FLASH 讀寫範例
+* [BSR_PeripheralHAL_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_GPIO) ... GPIO 輸入輸出範例
+* [BSR_PeripheralHAL_EXIT](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_EXIT) ... EXIT 中斷範例
+* [BSR_PeripheralHAL_FLASH](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_FLASH) ... FLASH 讀寫範例
 * [BSR_PeripheralHAL_TIM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_TIM) ... TIM Base 計時中斷範例
 * [BSR_PeripheralHAL_TIM-PWM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_TIM-PWM) ... TIM PWM 輸出範例
 * [BSR_PeripheralHAL_TIM-InputCap](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_TIM-InputCap) ... TIM 輸入捕捉範例
