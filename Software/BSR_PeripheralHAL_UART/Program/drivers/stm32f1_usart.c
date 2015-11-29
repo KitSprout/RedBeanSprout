@@ -6,99 +6,97 @@
 /*====================================================================================================*
 **函數 : UART_SendByte
 **功能 : Send Byte
-**輸入 : huart, *sendData
+**輸入 : USARTx, *sendData
 **輸出 : None
-**使用 : UART_SendByte(&huart, 'A');
+**使用 : UART_SendByte(USARTx, 'A');
 **====================================================================================================*/
 /*====================================================================================================*/
-void UART_SendByte( UART_HandleTypeDef *huart, uint8_t *sendData )
+void UART_SendByte( USART_TypeDef *USARTx, uint8_t *sendData )
 {
-  huart->Instance->DR = (*sendData & (uint16_t)0x01FF);
-  while(!__HAL_UART_GET_FLAG(huart, UART_FLAG_TXE));
+  USARTx->DR = (*sendData & (uint16_t)0x01FF);
+  while(!(USARTx->SR & UART_FLAG_TXE));
 }
 /*====================================================================================================*/
 /*====================================================================================================*
 **函數 : UART_RecvByte
 **功能 : Recv Byte
-**輸入 : huart, *recvByte
+**輸入 : USARTx, *recvData
 **輸出 : None
-**使用 : UART_RecvByte(&huart, recvData);
+**使用 : UART_RecvByte(USARTx, recvData);
 **====================================================================================================*/
 /*====================================================================================================*/
-void UART_RecvByte( UART_HandleTypeDef *huart, uint8_t *recvData )
+void UART_RecvByte( USART_TypeDef *USARTx, uint8_t *recvData )
 {
-  while(!__HAL_UART_GET_FLAG(huart, UART_FLAG_RXNE));
-  *recvData = (uint16_t)(huart->Instance->DR & (uint16_t)0x01FF);
+  while(!(USARTx->SR & UART_FLAG_RXNE));
+  *recvData = (uint16_t)(USARTx->DR & (uint16_t)0x01FF);
 }
 /*====================================================================================================*/
 /*====================================================================================================*
 **函數 : UART_RecvByteWTO
 **功能 : Recv Byte with Timeout
-**輸入 : huart, *recvData, timeout
+**輸入 : USARTx, *recvData, timeoutMs
 **輸出 : State
-**使用 : UART_RecvByteWTO(huart, recvData, 200);
+**使用 : UART_RecvByteWTO(USARTx, recvData, 200);
 **====================================================================================================*/
 /*====================================================================================================*/
-int8_t UART_RecvByteWTO( UART_HandleTypeDef *huart, uint8_t *recvData, uint32_t timeout )
+int8_t UART_RecvByteWTO( USART_TypeDef *USARTx, uint8_t *recvData, uint32_t timeoutMs )
 {
-  while(!__HAL_UART_GET_FLAG(huart, UART_FLAG_RXNE)) {
-    if(timeout-- > 0)
-      HAL_Delay(1);
+  while((USARTx->SR & UART_FLAG_RXNE) == RESET) {
+    if(timeoutMs-- > 0)
+      Delay_1ms(1);
     else
       return ERROR; // timeout
   }
-  *recvData = (uint16_t)(huart->Instance->DR & (uint16_t)0x01FF);
+  *recvData = (uint16_t)(USARTx->DR & (uint16_t)0x01FF);
 
   return SUCCESS;
 }
 /*====================================================================================================*/
 /*====================================================================================================*
 **函數 : UART_SendData
-**功能 : Send Bytes
-**輸入 : USARTx, *SendData, DataLen
+**功能 : Send Data
+**輸入 : USARTx, *sendData, lens
 **輸出 : None
-**使用 : UART_SendByte(USART1, SendData, DataLen);
+**使用 : UART_SendData(USARTx, sendData, lens);
 **====================================================================================================*/
 /*====================================================================================================*/
-void UART_SendData( UART_HandleTypeDef *huart, uint8_t *sendData, uint16_t dataLen )
+void UART_SendData( USART_TypeDef *USARTx, uint8_t *sendData, uint16_t lens )
 {
   do {
-    UART_SendByte(huart, sendData++);
-  } while(--dataLen);
+    UART_SendByte(USARTx, sendData++);
+  } while(--lens);
 }
 /*====================================================================================================*/
 /*====================================================================================================*
 **函數 : UART_RecvData
-**功能 : Recv Bytes
-**輸入 : USARTx, *RecvData, DataLen
+**功能 : Recv Data
+**輸入 : USARTx, *recvData, lens
 **輸出 : None
-**使用 : UART_RecvData(USART1, RecvData, DataLen);
+**使用 : UART_RecvData(USARTx, recvData, lens);
 **====================================================================================================*/
 /*====================================================================================================*/
-void UART_RecvData( UART_HandleTypeDef *huart, uint8_t *recvData, uint16_t dataLen )
+void UART_RecvData( USART_TypeDef *USARTx, uint8_t *recvData, uint16_t lens )
 {
   do {
-    UART_RecvByte(huart, recvData++);
-  } while(--dataLen);
+    UART_RecvByte(USARTx, recvData++);
+  } while(--lens);
 }
 /*====================================================================================================*/
 /*====================================================================================================*
 **函數 : UART_RecvDataWTO
-**功能 : Recv Bytes with Timeout
-**輸入 : USARTx, *RecvByte, DataLen, TimeoutMs
-**輸出 : State
-**使用 : UART_RecvDataWTO(USART1, RecvData, DataLen, 200);
+**功能 : Recv Data With Timeout
+**輸入 : USARTx, *recvData, lens, timeoutMs
+**輸出 : state
+**使用 : UART_RecvDataWTO(USARTx, recvData, lens, 200);
 **====================================================================================================*/
 /*====================================================================================================*/
-int8_t UART_RecvDataWTO( UART_HandleTypeDef *huart, uint8_t *recvData, uint16_t dataLen, uint32_t timeout )
+int8_t UART_RecvDataWTO( USART_TypeDef *USARTx, uint8_t *recvData, uint16_t lens, uint32_t timeoutMs )
 {
   int8_t state = ERROR;
 
   do {
-    state = UART_RecvByteWTO(huart, recvData++, timeout);
-    if(state == ERROR)
-      return ERROR;
-  } while(--dataLen);
+    state = UART_RecvByteWTO(USARTx, recvData++, timeoutMs);
+  } while((--lens) && (state != ERROR));
 
   return state;
 }

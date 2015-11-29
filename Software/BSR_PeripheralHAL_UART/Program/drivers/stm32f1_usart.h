@@ -6,12 +6,12 @@
 #include "stm32f1xx_hal.h"
 /*====================================================================================================*/
 /*====================================================================================================*/
-void   UART_SendByte( UART_HandleTypeDef *huart, uint8_t *sendData );
-void   UART_RecvByte( UART_HandleTypeDef *huart, uint8_t *recvData );
-int8_t UART_RecvByteWTO( UART_HandleTypeDef *huart, uint8_t *recvData, uint32_t timeout );
-void   UART_SendData( UART_HandleTypeDef *huart, uint8_t *sendData, uint16_t dataLen );
-void   UART_RecvData( UART_HandleTypeDef *huart, uint8_t *recvData, uint16_t dataLen );
-int8_t UART_RecvDataWTO( UART_HandleTypeDef *huart, uint8_t *recvData, uint16_t dataLen, uint32_t timeout );
+void   UART_SendByte( USART_TypeDef *USARTx, uint8_t *SendData );
+void   UART_RecvByte( USART_TypeDef *USARTx, uint8_t *RecvData );
+int8_t UART_RecvByteWTO( USART_TypeDef *USARTx, uint8_t *RecvData, uint32_t TimeoutMs );
+void   UART_SendData( USART_TypeDef *USARTx, uint8_t *SendData, uint16_t DataLen );
+void   UART_RecvData( USART_TypeDef *USARTx, uint8_t *RecvData, uint16_t DataLen );
+int8_t UART_RecvDataWTO( USART_TypeDef *USARTx, uint8_t *RecvData, uint16_t DataLen, uint32_t TimeoutMs );
 /*====================================================================================================*/
 /*====================================================================================================*/
 #endif	 
