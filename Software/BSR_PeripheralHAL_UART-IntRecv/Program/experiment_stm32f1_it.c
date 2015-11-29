@@ -1,12 +1,8 @@
 /*====================================================================================================*/
 /*====================================================================================================*/
 #include "drivers\stm32f1_system.h"
-#include "modules\module_rs232.h"
 
 #include "experiment_stm32f1.h"
-/*====================================================================================================*/
-/*====================================================================================================*/
-extern UART_HandleTypeDef UART_HandleStruct;
 /*====================================================================================================*/
 /*====================================================================================================*/
 void NMI_Handler( void ) {}
@@ -18,6 +14,9 @@ void SVC_Handler( void ) {}
 void DebugMon_Handler( void ) {}
 void PendSV_Handler( void ) {}
 void SysTick_Handler( void ) { HAL_IncTick(); }
+/*====================================================================================================*/
+/*====================================================================================================*/
+extern UART_HandleTypeDef Serial_InitStruct;
 /*====================================================================================================*/
 /*====================================================================================================*/
 //void WWDG_IRQHandler( void );
@@ -59,18 +58,10 @@ void SysTick_Handler( void ) { HAL_IncTick(); }
 //void SPI2_IRQHandler( void );
 void USART1_IRQHandler( void )
 {
-  uint8_t RecvData = 0;
-
-  LED_R_Toggle;
-  if(__HAL_UART_GET_IT_SOURCE(&UART_HandleStruct, UART_IT_RXNE) != RESET) {
-    LED_B_Toggle;
-    RecvData = RS232_RecvByte();
-    if(RecvData == 0x0D)
-      RS232_SendStr("\r\n");
-    else
-      RS232_SendByte(RecvData);
+  if(__HAL_UART_GET_IT_SOURCE(&Serial_InitStruct, UART_IT_RXNE) != RESET) {
+    Serial_evenCallBack();
   }
-  __HAL_UART_GET_IT_SOURCE(&UART_HandleStruct, UART_IT_RXNE);
+  __HAL_UART_GET_IT_SOURCE(&Serial_InitStruct, UART_IT_RXNE);
 }
 //void USART2_IRQHandler( void );
 //void USART3_IRQHandler( void );
