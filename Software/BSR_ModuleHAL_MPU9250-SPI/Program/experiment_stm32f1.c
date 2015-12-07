@@ -1,10 +1,13 @@
 /*====================================================================================================*/
 /*====================================================================================================*/
 #include "drivers\stm32f1_system.h"
-#include "modules\module_rs232.h"
+#include "modules\module_serial.h"
 #include "modules\module_mpu9250.h"
 
 #include "experiment_stm32f1.h"
+/*====================================================================================================*/
+/*====================================================================================================*/
+void Serial_SendDataMATLAB( int16_t *sendData, uint8_t lens );
 /*====================================================================================================*/
 /*====================================================================================================*/
 void System_Init( void )
@@ -13,23 +16,24 @@ void System_Init( void )
 
   HAL_Init();
   GPIO_Config();
-  RS232_Config();
+  Serial_Config();
   MPU9250_Config();
 
   Delay_100ms(1);
-
-  LED_R_Reset;
   printf("\r\nHello World!\r\n\r\n");
 
+  LED_B_Reset();
   MPU_InitStruct.MPU_Gyr_FullScale     = MPU_GyrFS_2000dps;
   MPU_InitStruct.MPU_Gyr_LowPassFilter = MPU_GyrLPS_41Hz;
   MPU_InitStruct.MPU_Acc_FullScale     = MPU_AccFS_4g;
-  MPU_InitStruct.MPU_Acc_LowPassFilter = MPU_AccLPS_42Hz;
+  MPU_InitStruct.MPU_Acc_LowPassFilter = MPU_AccLPS_41Hz;
   MPU_InitStruct.MPU_Mag_FullScale     = MPU_MagFS_16b;
   while(MPU9250_Init(&MPU_InitStruct) != SUCCESS) {
-    LED_G_Toggle;
+    LED_R_Toggle();
     Delay_100ms(1);
   }
+  LED_R_Set();
+  LED_B_Set();
   Delay_100ms(1);
 }
 
@@ -40,50 +44,47 @@ int main( void )
   System_Init();
 
   while(1) {
-    LED_G_Toggle;
-    LED_B_Toggle;
-    Delay_100ms(5);
+    LED_G_Toggle();
+    Delay_1ms(4);
 
     MPU9250_getData(IMU_Buf);
-    printf("Acc.X = %d\tAcc.Y = %d\tAcc.Z = %d\tGyr.X = %d\tGyr.Y = %d\tGyr.Z = %d\tMag.X = %d\tMag.Y = %d\tMag.Z = %d\tTemp = %d\r\n", IMU_Buf[1], IMU_Buf[2], IMU_Buf[3], IMU_Buf[4], IMU_Buf[5], IMU_Buf[6], IMU_Buf[7], IMU_Buf[8], IMU_Buf[9], IMU_Buf[0]);
+//    printf("Acc.X = %d\tAcc.Y = %d\tAcc.Z = %d\tGyr.X = %d\tGyr.Y = %d\tGyr.Z = %d\tMag.X = %d\tMag.Y = %d\tMag.Z = %d\tTemp = %d\r\n", IMU_Buf[1], IMU_Buf[2], IMU_Buf[3], IMU_Buf[4], IMU_Buf[5], IMU_Buf[6], IMU_Buf[7], IMU_Buf[8], IMU_Buf[9], IMU_Buf[0]);
+    Serial_SendDataMATLAB(IMU_Buf, 10);
   }
 }
 /*====================================================================================================*/
+/*====================================================================================================*
+**函數 : Serial_SendDataMATLAB
+**功能 : Send Data to MATLAB 
+**輸入 : *sendData, lens
+**輸出 : None
+**使用 : Serial_SendDataMATLAB(sendData, 10); // int16 * 10 data
+**====================================================================================================*/
 /*====================================================================================================*/
-void GPIO_Config( void )
+void Serial_SendDataMATLAB( int16_t *sendData, uint8_t lens )
 {
-  GPIO_InitTypeDef GPIO_InitStruct;
+  uint8_t tmpData[32] = {0};  // tmpData lens >= 2 * lens + 4
+  uint8_t *ptrData = tmpData;
+  uint8_t dataBytes = lens << 1;
+  uint8_t dataLens = dataBytes + 4;
+  uint8_t count = 0;
+  uint16_t tmpSum = 0;
 
-  /* GPIO Clk Init *************************************************************/
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_AFIO_CLK_ENABLE();
-  __HAL_AFIO_REMAP_SWJ_NOJTAG();
+  tmpData[0] = 'S';
+  while(count < dataBytes) {
+    tmpData[count+1] = Byte8H(sendData[count >> 1]);
+    tmpData[count+2] = Byte8L(sendData[count >> 1]);
+    count = count + 2;
+  }
+  for(uint8_t i = 0; i < dataBytes; i++)
+    tmpSum += tmpData[i+1];
+  tmpData[dataLens - 3] = (uint8_t)(tmpSum & 0x00FF);
+  tmpData[dataLens - 2] = '\r';
+  tmpData[dataLens - 1] = '\n';
 
-  /* LED_B PC13 */  /* LED_G PC14 */  /* LED_R PC15 */
-  GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull  = GPIO_PULLUP;
-  GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
-
-  GPIO_InitStruct.Pin   = GPIO_PIN_13 | GPIO_PIN_14 | GPIO_PIN_15;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-
-  /* KEY_WU PA0 */  /* KEY_BO PB2 */
-  GPIO_InitStruct.Mode  = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull  = GPIO_PULLUP;
-  GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
-  
-  GPIO_InitStruct.Pin   = GPIO_PIN_0;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-  GPIO_InitStruct.Pin   = GPIO_PIN_2;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  // Init
-  LED_R_Set;
-  LED_G_Set;
-  LED_B_Set;
+  do {
+    Serial_SendByte(*ptrData++);
+  } while(--dataLens);
 }
 /*====================================================================================================*/
 /*====================================================================================================*/

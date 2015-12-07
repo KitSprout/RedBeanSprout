@@ -43,7 +43,7 @@
 /*====================================================================================================*/
 /*====================================================================================================*/
 #define __GPIO_SET(_PORT, _PIN)   (_PORT->BSRR = _PIN)
-#define __GPIO_RST(_PORT, _PIN)   (_PORT->BSRR = (uint32_t)_PIN << 16)
+#define __GPIO_RST(_PORT, _PIN)   (_PORT->BRR  = _PIN)
 #define __GPIO_TOG(_PORT, _PIN)   (_PORT->ODR ^= _PIN)
 #define __GPIO_READ(_PORT, _PIN)  (_PORT->IDR  & _PIN)
 /*====================================================================================================*/
@@ -59,19 +59,19 @@
 #define S32_MIN ((int32_t)-2147483648)
 
 #define Byte32(Type, Byte4, Byte3, Byte2, Byte1)  ((Type)((((uint8_t)(Byte4))<<24) | (((uint8_t)(Byte3))<<16) | (((uint8_t)(Byte2))<<8) | ((uint8_t)(Byte1))))
-#define Byte32U16H(Byte32U16) ((uint16_t)( Byte32U16&0xFFFF0000)>>16)
-#define Byte32U16L(Byte32U16) ((uint16_t)((Byte32U16&0x0000FFFF)))
-#define Byte32U8_1(Byte32U8)  ((uint8_t)( Byte32U8&0x000000FF))
-#define Byte32U8_2(Byte32U8)  ((uint8_t)((Byte32U8&0x0000FF00)>>8))
-#define Byte32U8_3(Byte32U8)  ((uint8_t)((Byte32U8&0x00FF0000)>>16))
-#define Byte32U8_4(Byte32U8)  ((uint8_t)((Byte32U8&0xFF000000)>>24))
+#define Byte32U16H(Byte32U16) ((uint16_t)(((uint32_t)(Byte32U16)&0xFFFF0000)>>16))
+#define Byte32U16L(Byte32U16) ((uint16_t)( (uint32_t)(Byte32U16)&0x0000FFFF))
+#define Byte32U8_4(Byte32U8)  ((uint8_t)(((uint32_t)(Byte32U8)&0xFF000000)>>24))
+#define Byte32U8_3(Byte32U8)  ((uint8_t)(((uint32_t)(Byte32U8)&0x00FF0000)>>16))
+#define Byte32U8_2(Byte32U8)  ((uint8_t)(((uint32_t)(Byte32U8)&0x0000FF00)>>8))
+#define Byte32U8_1(Byte32U8)  ((uint8_t)( (uint32_t)(Byte32U8)&0x000000FF))
 
 #define Byte16(Type, ByteH, ByteL)  ((Type)((((uint16_t)(ByteH))<<8) | ((uint16_t)(ByteL))))
-#define Byte16U8H(Byte32U8) ((uint8_t)( Byte32U8&0xFF00)>>8)
-#define Byte16U8L(Byte32U8) ((uint8_t)((Byte32U8&0x00FF)))
+#define Byte16U8H(Byte16U8) ((uint8_t)(((uint16_t)(Byte16U8)&0xFF00)>>8))
+#define Byte16U8L(Byte16U8) ((uint8_t)( (uint16_t)(Byte16U8)&0x00FF))
 
-#define Byte8H(ByteH) ((uint8_t)(((uint16_t)(ByteH))>>8))
-#define Byte8L(ByteL) ((uint8_t)(ByteL))
+#define Byte8H(ByteH) ((uint8_t)(((uint16_t)(ByteH)&0xFF00)>>8))
+#define Byte8L(ByteL) ((uint8_t)( (uint16_t)(ByteL)&0x00FF))
 
 #define NULL 0
 /*====================================================================================================*/

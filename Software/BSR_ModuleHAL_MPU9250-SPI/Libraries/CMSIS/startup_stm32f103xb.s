@@ -1,8 +1,8 @@
-;******************** (C) COPYRIGHT 2014 STMicroelectronics ********************
+;******************** (C) COPYRIGHT 2015 STMicroelectronics ********************
 ;* File Name          : startup_stm32f103xb.s
 ;* Author             : MCD Application Team
-;* Version            : V4.0.0
-;* Date               : 16-December-2014
+;* Version            : V4.0.1
+;* Date               : 31-July-2015
 ;* Description        : STM32F103xB Devices vector table for MDK-ARM toolchain. 
 ;*                      This module performs:
 ;*                      - Set the initial SP
@@ -15,7 +15,7 @@
 ;*                      priority is Privileged, and the Stack is set to Main.
 ;********************************************************************************
 ;*
-;* COPYRIGHT(c) 2014 STMicroelectronics
+;* COPYRIGHT(c) 2015 STMicroelectronics
 ;*
 ;* Redistribution and use in source and binary forms, with or without modification,
 ;* are permitted provided that the following conditions are met:

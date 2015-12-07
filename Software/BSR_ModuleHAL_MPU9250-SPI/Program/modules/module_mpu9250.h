@@ -1,4 +1,4 @@
-/* #include "module_mpu9250.h" */
+/* #include "module_MPU9250.h" */
 
 #ifndef __MODULE_MPU9250_H
 #define __MODULE_MPU9250_H
@@ -49,8 +49,8 @@ typedef enum {
 typedef enum {
   MPU_AccLPS_460Hz   = 0x00,
   MPU_AccLPS_184Hz   = 0x01,
-  MPU_AccLPS_93Hz    = 0x02,
-  MPU_AccLPS_42Hz    = 0x03,
+  MPU_AccLPS_92Hz    = 0x02,
+  MPU_AccLPS_41Hz    = 0x03,
   MPU_AccLPS_20Hz    = 0x04,
   MPU_AccLPS_10Hz    = 0x05,
   MPU_AccLPS_5Hz     = 0x06,
@@ -204,6 +204,9 @@ typedef struct {
 #define MPU6500_ZA_OFFSET_H         ((uint8_t)0x7D)
 #define MPU6500_ZA_OFFSET_L         ((uint8_t)0x7E)
 
+#define MPU6500_I2C_SLVx_EN         ((uint8_t)0x80)
+#define MPU6500_I2C_SLV4_DONE       ((uint8_t)0x40)
+#define MPU6500_I2C_SLV4_NACK       ((uint8_t)0x10)
 
 /* ---- AK8963 Reg In MPU9250 ----------------------------------------------- */
 
@@ -232,19 +235,28 @@ typedef struct {
 #define AK8963_ASAX                 ((uint8_t)0x10)
 #define AK8963_ASAY                 ((uint8_t)0x11)
 #define AK8963_ASAZ                 ((uint8_t)0x12)
+// Status
+#define AK8963_STATUS_DRDY          ((uint8_t)0x01)
+#define AK8963_STATUS_DOR           ((uint8_t)0x02)
+#define AK8963_STATUS_HOFL          ((uint8_t)0x08)
 /*=====================================================================================================*/
 /*=====================================================================================================*/
-static void    MPU9250_WriteReg( uint8_t WriteAddr, uint8_t WriteData );
-static uint8_t MPU9250_ReadReg( uint8_t ReadAddr );
-static void    MPU9250_ReadRegs( uint8_t ReadAddr, uint8_t *ReadBuf, uint8_t Bytes );
-static void    MPU9250_Mag_WriteReg( uint8_t WriteAddr, uint8_t WriteData );
-static uint8_t MPU9250_Mag_ReadReg( uint8_t ReadAddr );
-static void    MPU9250_SetSpeed( uint8_t SpeedSel );
+void    MPU9250_WriteReg( uint8_t writeAddr, uint8_t writeData );
+void    MPU9250_WriteRegs( uint8_t writeAddr, uint8_t *writeData, uint8_t lens );
+uint8_t MPU9250_ReadReg( uint8_t readAddr );
+void    MPU9250_ReadRegs( uint8_t readAddr, uint8_t *readData, uint8_t lens );
+void    MPU9250_Mag_WriteReg( uint8_t writeAddr, uint8_t writeData );
+void    MPU9250_Mag_WriteRegs( uint8_t writeAddr, uint8_t *writeData, uint8_t lens );
+uint8_t MPU9250_Mag_ReadReg( uint8_t readAddr );
+void    MPU9250_Mag_ReadRegs( uint8_t readAddr, uint8_t *readData, uint8_t lens );
+
+void    MPU9250_SetSpeed( uint8_t SpeedSel );
 
 void    MPU9250_Config( void );
 uint8_t MPU9250_Init( MPU_InitTypeDef *MPUx );
+
 uint8_t MPU9250_Check( void );
-void    MPU9250_getData( int16_t *IMU_Buf );
+void    MPU9250_getData( int16_t *dataIMU );
 /*=====================================================================================================*/
 /*=====================================================================================================*/
 #endif

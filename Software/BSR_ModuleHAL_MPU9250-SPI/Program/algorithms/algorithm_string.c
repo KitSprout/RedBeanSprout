@@ -5,56 +5,56 @@
 #include "algorithm_string.h"
 /*====================================================================================================*/
 /*====================================================================================================*
-**函數 : Str_NumToChar
+**函數 : num2Char
 **功能 : Number to string
-**輸入 : Type, NumLen, *CharData, NumData
+**輸入 : type, lens, *pChar, number
 **輸出 : None
-**使用 : Str_NumToChar(Type_O, 6, TrData, Data);
+**使用 : num2Str(type, lens, pChar, number);
 **====================================================================================================*/
 /*====================================================================================================*/
-void Str_NumToChar( StrType Type, uint8_t NumLen, char *CharData, int32_t NumData )
+void num2Str( StringType type, uint8_t lens, char *pStr, int32_t number )
 {
   uint8_t i = 0;
-  uint32_t TmpStr[48] = {0};
-  uint32_t TmpNum = 1;
+  uint32_t tmpStr[48] = {0};
+  uint32_t tmpNum = 1;
 
-  switch(Type) {
+  switch(type) {
 
     case Type_B:
     case Type_O:
     case Type_D:
     case Type_H:
-      for(i = 0; i < NumLen; i++) {
-        TmpStr[i] = ((uint32_t)NumData) / TmpNum;
-        TmpNum = TmpNum * Type;
+      for(i = 0; i < lens; i++) {
+        tmpStr[i] = ((uint32_t)number) / tmpNum;
+        tmpNum = tmpNum * type;
       }
-      for(i = 0; i < NumLen; i++) {
-        CharData[NumLen-i-1] = TmpStr[i] - TmpStr[i+1] * Type;
-        if(CharData[NumLen-i-1] > 9)
-          CharData[NumLen-i-1] += 55;	// 65-10
+      for(i = 0; i < lens; i++) {
+        pStr[lens-i-1] = tmpStr[i] - tmpStr[i+1] * type;
+        if(pStr[lens-i-1] > 9)
+          pStr[lens-i-1] += 55;	// 65-10
         else
-          CharData[NumLen-i-1] += 48;
+          pStr[lens-i-1] += 48;
       }
-      CharData[NumLen] = '\0';
+      pStr[lens] = '\0';
     break;
 
     case Type_I:
-      if(NumData < 0) {
-        CharData[0] = '-';
-        NumData = (~NumData) + 1;
+      if(number < 0) {
+        pStr[0] = '-';
+        number = (~number) + 1;
       }
       else {
-        CharData[0] = '+';
+        pStr[0] = '+';
       }
-      for(i = 1; i < NumLen + 1; i++) {
-        TmpStr[i-1] = ((uint32_t)NumData) / TmpNum;
-        TmpNum = TmpNum * 10;
+      for(i = 1; i < lens + 1; i++) {
+        tmpStr[i-1] = ((uint32_t)number) / tmpNum;
+        tmpNum = tmpNum * 10;
       }
-      for(i = 1; i < NumLen + 1; i++) {
-        CharData[NumLen-i+1] = TmpStr[i-1] - TmpStr[i] * 10;
-        CharData[NumLen-i+1] += 48;
+      for(i = 1; i < lens + 1; i++) {
+        pStr[lens-i+1] = tmpStr[i-1] - tmpStr[i] * 10;
+        pStr[lens-i+1] += 48;
       }
-      CharData[NumLen+1] = '\0';
+      pStr[lens+1] = '\0';
       break;
 
     case Type_F:
@@ -63,24 +63,24 @@ void Str_NumToChar( StrType Type, uint8_t NumLen, char *CharData, int32_t NumDat
 }
 /*====================================================================================================*/
 /*====================================================================================================*
-**函數 : Str_LenOfStr
-**功能 : 數值轉字串
-**輸入 : *inputStr
-**輸出 : StrLen
-**使用 : StrLen = Str_LenOfStr("Hello World!!");
+**函數 : lenOfStr
+**功能 : String Lens
+**輸入 : *pStr
+**輸出 : strLens
+**使用 : strLens = lenOfStr("Hello World!!");
 **====================================================================================================*/
 /*====================================================================================================*/
-uint16_t Str_LenOfStr( char *inputStr )
+uint16_t lenOfStr( char *pStr )
 {
-  uint16_t StrLen = 0;
+  uint16_t strLens = 0;
 
-  if(inputStr == NULL)
-    return StrLen;
+  if(pStr == NULL)
+    return strLens;
 
-  while(*(inputStr++))
-    StrLen++;
+  while(*(pStr++))
+    strLens++;
 
-  return StrLen;
+  return strLens;
 }
 /*====================================================================================================*/
 /*====================================================================================================*/

@@ -10,12 +10,12 @@
       <TargetName>STM32F103C</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060020::V5.06 (build 20)::ARMCC</pCCUsed>
+      <pCCUsed>5060061::V5.06 update 1 (build 61)::ARMCC</pCCUsed>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103CB</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F1xx_DFP.1.1.0</PackID>
+          <PackID>Keil.STM32F1xx_DFP.2.0.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IROM(0x08000000,0x20000) IRAM(0x20000000,0x5000) CPUTYPE("Cortex-M3") CLOCK(72000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -517,9 +517,9 @@
           <GroupName>Module</GroupName>
           <Files>
             <File>
-              <FileName>module_rs232.c</FileName>
+              <FileName>module_serial.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Program\modules\module_rs232.c</FilePath>
+              <FilePath>..\Program\modules\module_serial.c</FilePath>
             </File>
             <File>
               <FileName>module_mpu9250.c</FileName>
