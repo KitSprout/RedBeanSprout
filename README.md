@@ -2,7 +2,7 @@
 ========
 * Author  : [Hom](https://github.com/Hom-Wang)
 * Version : v2.2
-* Update  : 2015/11/28
+* Update  : 2016/01/09
 
 Description
 ========
@@ -34,55 +34,26 @@ Software
 ========
 RedBeanSprout CortexM3 版本  
 Use HAL Library  
-* [BSR_PeripheralHAL_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_GPIO) ... GPIO 輸入輸出範例
+* [BSR_testHardware](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_testHardware) ... 開發板硬體測試
+* [BSR_PeripheralHAL_ADC](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_ADC) ... ADC 讀取範例
+* [BSR_PeripheralHAL_CRC](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_CRC) ... CRC 驗證碼範例
 * [BSR_PeripheralHAL_EXIT](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_EXIT) ... EXIT 中斷範例
 * [BSR_PeripheralHAL_FLASH](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_FLASH) ... FLASH 讀寫範例
+* [BSR_PeripheralHAL_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_GPIO) ... GPIO 輸入輸出範例
+* [BSR_PeripheralHAL_PWR](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_PWR) ... 低功耗模式範例
 * [BSR_PeripheralHAL_TIM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_TIM) ... TIM Base 計時中斷範例
-* [BSR_PeripheralHAL_TIM-PWM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_TIM-PWM) ... TIM PWM 輸出範例
 * [BSR_PeripheralHAL_TIM-InputCap](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_TIM-InputCap) ... TIM 輸入捕捉範例
+* [BSR_PeripheralHAL_TIM-PWM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_TIM-PWM) ... TIM PWM 輸出範例
 * [BSR_PeripheralHAL_UART](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_UART) ... UART 傳輸範例
 * [BSR_PeripheralHAL_UART-IntRecv](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_PeripheralHAL_UART-IntRecv) ... UART 中斷接收範例
+* [BSR_ModuleHAL_DAC-DAC128S085](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_ModuleHAL_DAC128S085) ... DAC128S085 範例
+* [BSR_ModuleHAL_MPU6050-SimuI2C](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_ModuleHAL_MPU6050-SimuI2C) ... MPU6050 SimuI2C 讀取範例
 * [BSR_ModuleHAL_MPU6500-SPI](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_ModuleHAL_MPU6500-SPI) ... MPU6500-SPI 範例
 * [BSR_ModuleHAL_MPU9250-SPI](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_ModuleHAL_MPU9250-SPI) ... MPU9250-SPI 範例
-* [BSR_ModuleHAL_DAC-DAC128S085](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_ModuleHAL_DAC128S085) ... DAC128S085 範例
-  
-Use STD Library
-* [BSR_Peripheral_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Peripheral_GPIO) ... GPIO 輸入輸出範例
-* [BSR_Peripheral_EXTI](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Peripheral_EXTI) ... 外部中斷範例
-* [BSR_Peripheral_FLASH](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Peripheral_FLASH) ... FLASH 讀寫範例
-* [BSR_Peripheral_ADC](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Peripheral_ADC) ... ADC 讀取範例
-* [BSR_Peripheral_PWM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Peripheral_PWM) ... PWM 輸出範例
-* [BSR_Peripheral_PWR](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Peripheral_PWR) ... Power Down 範例
-* [BSR_Peripheral_Systick](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Peripheral_Systick) ... Systick 範例
-* [BSR_Peripheral_TIM](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Peripheral_TIM) ... Timer 計時範例
-* [BSR_Peripheral_UART](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Peripheral_UART) ... USART 傳輸範例
-* [BSR_Peripheral_UART_IntRecv](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Peripheral_UART_IntRecv) ... USART 中斷接收範例
-* [BSR_Peripheral_WDG](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Peripheral_WDG) ... Watch Dog 範例
-* [BSR_Module_DAC-DAC128S085](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Module_DAC-DAC128S085) ... DAC128S085 範例
-* [BSR_Module_DAC-DAC8311](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Module_DAC-DAC8311) ... [DAC8311](https://github.com/KitSprout/DAC-DAC8311) 範例
-* [BSR_Module_DigiPot-AD5292](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Module_DigiPot-AD5292) ... [AD5292](https://github.com/KitSprout/DigiPot-AD5292) 範例
-* [BSR_Module_Flash-W25Q](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Module_Flash-W25Q) ... [W25Qxx](https://github.com/KitSprout/Flash-W25Q) 範例
-* [BSR_Module_MPU6050](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Module_MPU6050) ... MPU6050 範例
-* [BSR_Module_MPU9255](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Module_MPU9255_SPI) ... MPU9255-SPI 範例
-* [BSR_Module_SF138](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Module_SF138) ... [74HC138](https://github.com/KitSprout/74HC138) 範例
-* [BSR_Module_SF595](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Module_SF595) ... [74HC595](https://github.com/KitSprout/74HC595) 範例
-* [BSR_Module_TFT2.2](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/_STD_Library/BSR_Module_TFT2.2) ... [TFT2.2-inch](https://github.com/KitSprout/TFT_2.2-inch) 範例
+* [BSR_FreeRTOS_Peripheral_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/Software/BSR_FreeRTOS_Peripheral_GPIO) ... FreeRTOS 範例
   
 RedBeanSprout CortexM4 版本  
-* [BSR_M4_Peripheral_ADC](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_ADC) ... ADC 讀取範例
-* [BSR_M4_Peripheral_EXTI](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_EXTI) ... 外部中斷範例
-* [BSR_M4_Peripheral_FLASH](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_FLASH) ... FLASH 讀寫範例
-* [BSR_M4_Peripheral_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_GPIO) ... GPIO 輸入輸出範例
-* [BSR_M4_Peripheral_PWM](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_PWM) ... PWM 輸出範例
-* [BSR_M4_Peripheral_Systick](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_Systick) ... Systick 範例
-* [BSR_M4_Peripheral_TIM](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_TIM) ... Timer 計時範例
-* [BSR_M4_Peripheral_UART](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_UART) ... USART 傳輸範例
-* [BSR_M4_Peripheral_UART_AutoBaudRate](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_UART_AutoBaudRate) ... USART 鮑率自動調整
-* [BSR_M4_Peripheral_UART_IntRecv](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Peripheral_UART_IntRecv) ... USART 中斷接收範例
-* [BSR_M4_Module_SF138](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Module_SF138) ... [74HC138](https://github.com/KitSprout/74HC138) 範例
-* [BSR_M4_Module_SF595](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Module_SF595) ... [74HC595](https://github.com/KitSprout/74HC595) 範例
-* [BSR_M4_Module_TFT2.2](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Module_TFT2.2) ... [TFT2.2-inch](https://github.com/KitSprout/TFT_2.2-inch) 範例
-* [BSR_M4_Module_TFT2.2_WaveForm](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR_M4_Module_TFT2.2_WaveForm) ... [TFT2.2-inch](https://github.com/KitSprout/TFT_2.2-inch) 示波器範例
+* [BSR_M4_PeripheralHAL_GPIO](https://github.com/KitSprout/RedBeanSprout/tree/master/SoftwareM4/BSR4_PeripheralHAL_GPIO) ... GPIO 輸入輸出範例
 
 Related Documents
 ========
@@ -100,6 +71,3 @@ Schematic
 ========
 <img src="https://lh5.googleusercontent.com/-m0ccQtZ--AM/VQcaIvHzk0I/AAAAAAAAL10/y6l9HnhyKic/s1600/Sch_RedBeanSprout_v2.2.png" />
 
-Get it
-========
-[露天拍賣 Ruten](http://goods.ruten.com.tw/item/show?21512671509234)
